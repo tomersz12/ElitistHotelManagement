@@ -1,0 +1,19 @@
+@charset "UTF-8";
+
+.CustomerLogin{
+	position: absolute;
+	width: 639px;
+	height: 114px;
+	left: 421px;
+	top: 274px;
+	border-radius: 40px;
+}
+
+.EmployeeLogin{
+	position: absolute;
+	width: 639px;
+	height: 114px;
+	left: 421px;
+	top: 443px;
+	border-radius: 40px;
+}

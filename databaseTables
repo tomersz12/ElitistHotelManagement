@@ -1,0 +1,141 @@
+CREATE TABLE HotelChain(
+    hotelID INTEGER NOT NULL,
+    centralOfficeAddress VARCHAR(255) NOT NULL,
+    numberOfHotels INTEGER NOT NULL CHECK (numberOfHotels >= 1),
+    hotelname VARCHAR(255) NOT NULL,
+    PRIMARY KEY (hotelID)
+);
+
+CREATE TABLE HotelBranch(
+    branchID INTEGER NOT NULL,
+    hotelID INTEGER NOT NULL,
+    starRating INTEGER NOT NULL CHECK (starRating >= 0 AND starRating <= 5),
+    numberOfRooms INTEGER NOT NULL CHECK (numberOfRooms >= 1),
+    branchAddress VARCHAR(255) NOT NULL,
+    PRIMARY KEY (branchID),
+    FOREIGN KEY (hotelID) REFERENCES HotelChain (hotelID)
+);
+
+CREATE TABLE HotelRoom(
+    roomID INTEGER NOT NULL,
+    branchID INTEGER NOT NULL,
+    price FLOAT NOT NULL,
+    roomCapacity INTEGER NOT NULL CHECK (roomCapacity <= 4),
+    typeOfView VARCHAR(255) NOT NULL,
+    extendability BOOLEAN NOT NULL,
+    PRIMARY KEY (roomID),
+    FOREIGN KEY (branchID) REFERENCES HotelBranch (branchID)
+);
+
+CREATE TABLE Employee(
+    employeeSIN INTEGER NOT NULL,
+    fullName VARCHAR(255) NOT NULL,
+    employeeAddress VARCHAR(40) NOT NULL,
+    branchID INTEGER NOT NULL,
+    PRIMARY KEY (employeeSIN),
+    FOREIGN KEY (branchID) REFERENCES HotelBranch (branchID)
+);
+
+CREATE TABLE Customer(
+    SIN INTEGER NOT NULL,
+    fullName VARCHAR(255) NOT NULL,
+    customerAddress VARCHAR(40) NOT NULL,
+    dateRegistered DATE NOT NULL,
+    PRIMARY KEY (SIN)
+);
+
+CREATE TABLE Booking(
+    bookingID INTEGER NOT NULL,
+    SIN INTEGER NOT NULL,
+    roomID INTEGER NOT NULL,
+    nameOfResident VARCHAR(255) NOT NULL,
+    startDate DATE NOT NULL,
+    endDate DATE NOT NULL,
+    checkIn BOOLEAN NOT NULL,
+    PRIMARY KEY (bookingID),
+    FOREIGN KEY (SIN) REFERENCES Customer (SIN),
+    FOREIGN KEY (roomID) REFERENCES HotelRoom (roomID)
+);
+
+CREATE TABLE Rental(
+    rentalID INTEGER NOT NULL,
+    bookingID INTEGER NOT NULL,
+    SIN INTEGER NOT NULL,
+    employeeSIN INTEGER NOT NULL,
+    roomID INTEGER NOT NULL,
+    nameOfResident VARCHAR(255) NOT NULL,
+    startDate DATE NOT NULL,
+    endDate DATE NOT NULL,
+    checkIn BOOLEAN NOT NULL,
+    paymentStatus BOOLEAN NOT NULL,
+    PRIMARY KEY (rentalID),
+    FOREIGN KEY (bookingID) REFERENCES Booking (bookingID),
+    FOREIGN KEY (employeeSIN) REFERENCES Employee (employeeSIN),
+    FOREIGN KEY (SIN) REFERENCES Customer (SIN),
+    FOREIGN KEY (roomID) REFERENCES HotelRoom (roomID)
+);
+
+CREATE TABLE ChainEmails(
+    chainEmailID INTEGER NOT NULL,
+    hotelID INTEGER NOT NULL,
+    chainEmailAddress VARCHAR(255) NOT NULL,
+    PRIMARY KEY (chainEmailID),
+    FOREIGN KEY (hotelID) REFERENCES HotelChain (hotelID)
+);
+
+CREATE TABLE ChainPhoneNumbers(
+    chainPhoneNumberID INTEGER NOT NULL,
+    hotelID INTEGER NOT NULL,
+    chainPhoneNumber VARCHAR(255) NOT NULL,
+    PRIMARY KEY (chainPhoneNumberID),
+    FOREIGN KEY (hotelID) REFERENCES HotelChain (hotelID)
+);
+
+CREATE TABLE BranchEmails(
+    branchEmailID INTEGER NOT NULL,
+    branchID INTEGER NOT NULL,
+    branchEmailAddress VARCHAR(255) NOT NULL,
+    PRIMARY KEY (branchEmailID),
+    FOREIGN KEY (branchID) REFERENCES HotelBranch (branchID)
+);
+
+CREATE TABLE BranchPhoneNumbers(
+    branchPhoneNumberID INTEGER NOT NULL,
+    branchID INTEGER NOT NULL,
+    branchPhoneNumber VARCHAR(255) NOT NULL,
+    PRIMARY KEY (branchPhoneNumberID),
+    FOREIGN KEY (branchID) REFERENCES HotelBranch (branchID)
+);
+
+CREATE TABLE Roles(
+    roleID INTEGER NOT NULL,
+    employeeSIN INTEGER NOT NULL,
+    employeeRole VARCHAR(255) NOT NULL,
+    PRIMARY KEY (roleID),
+    FOREIGN KEY (employeeSIN) REFERENCES Employee (employeeSIN)
+);
+
+CREATE TABLE Amentities(
+    amentitieID INTEGER NOT NULL,
+    roomID INTEGER NOT NULL,
+    amentities VARCHAR(255) NOT NULL,
+    PRIMARY KEY (amentitieID),
+    FOREIGN KEY (roomID) REFERENCES HotelRoom (roomID)
+);
+
+CREATE TABLE ProblemsAndDamages(
+    problemID INTEGER NOT NULL,
+    roomID INTEGER NOT NULL,
+    problems VARCHAR(255) NOT NULL,
+    PRIMARY KEY (problemID),
+    FOREIGN KEY (roomID) REFERENCES HotelRoom (roomID)
+);
+
+-- hotelchains
+INSERT INTO hotelchain VALUES (1234, '100 Kent Street', 10, 'Marriott');
+INSERT INTO hotelchain VALUES (5432, '361 Queen Steeet', 15, 'Hilton');
+INSERT INTO hotelchain VALUES (7431, '75 Laurier Avenue', 8, 'AirBnB');
+INSERT INTO hotelchain VALUES (9845, '210 York Street', 11, 'Tomer Lodges');
+INSERT INTO hotelchain VALUES (5498, '290 Besserer Street', 10, 'Wang Resorts');
+
+-- Marriott Branches
