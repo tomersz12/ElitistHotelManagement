@@ -9,8 +9,8 @@ import java.sql.Statement;
 
 public class ContactProgram {
 	static String jdbcURL = "jdbc:postgresql://localhost:5432/hotelmanagement";
-    static String username = "justinwang";
-    static String password = "postwan07";
+    static String username = "";
+    static String password = "";
 
     public static String add() throws SQLException{
         String address = "";
