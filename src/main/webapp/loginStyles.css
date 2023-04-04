@@ -1,6 +1,6 @@
 @charset "UTF-8";
 
-.CustomerLogin{
+.CustomerLogin {
 	position: absolute;
 	width: 639px;
 	height: 114px;
@@ -9,11 +9,20 @@
 	border-radius: 40px;
 }
 
-.EmployeeLogin{
+.EmployeeLogin {
 	position: absolute;
 	width: 639px;
 	height: 114px;
 	left: 421px;
-	top: 443px;
+	top: 543px;
 	border-radius: 40px;
+}
+
+.customerLoginForm {
+	position: absolute;
+	width: 639px;
+	height: 114px;
+	left: 664px;
+	top: 404px;
+	display: none;
 }

@@ -139,3 +139,8 @@ INSERT INTO hotelchain VALUES (9845, '210 York Street', 11, 'Tomer Lodges');
 INSERT INTO hotelchain VALUES (5498, '290 Besserer Street', 10, 'Wang Resorts');
 
 -- Marriott Branches
+INSERT INTO hotelbranch VALUES (911, 1234, 5, 5, 'Ottawa');
+
+
+-- Customers
+INSERT INTO customer VALUES (929002842, 'Justin Wang', '75 Tambrook Blvd', '2023-03-15');
