@@ -29,12 +29,40 @@ public class MyServlet extends HttpServlet{
 			}
 			
 			if (check) {
+				request.setAttribute("userSin", userSIN);
 				request.getRequestDispatcher("/customerintro.jsp").forward(request, response);
 			}else {
 				request.getRequestDispatcher("/loginScreen.jsp").forward(request, response);
 			}
 		
-		//filter request
+		//check login
+		}else if ("Profile".equals(button)){
+			String usersin = request.getParameter("USERSIN");
+			request.setAttribute("userSin", usersin);
+			request.getRequestDispatcher("/userprofile.jsp").forward(request, response);
+		
+		//change user info request
+		}else if ("Change Info".equals(button)) {
+			String userSinChange = request.getParameter("sinNumber");
+			String userFullName = request.getParameter("name");
+			String userAddress = request.getParameter("address");
+			
+			request.setAttribute("userSin", userSinChange);
+//			request.setAttribute("nameChange", userFullName);
+//			request.setAttribute("addressChange", userAddress);
+//			request.setAttribute("registerDateChange", userDateOfRegister);
+			System.out.println("here: " + userSinChange);
+			
+			try {
+				ContactProgram.updateUserProfile(Integer.parseInt(userSinChange), userFullName, userAddress);
+			} catch (SQLException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+			request.getRequestDispatcher("/customerintro.jsp").forward(request, response);
+
+			
+		//filter stuff
 		}else {
 			String chosenCity = request.getParameter("city");
 			String chosenStartDate = request.getParameter("startdate");

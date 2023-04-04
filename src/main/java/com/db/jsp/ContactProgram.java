@@ -2,6 +2,7 @@ package com.db.jsp;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
@@ -45,6 +46,8 @@ public class ContactProgram {
         
         ResultSet result = statement.executeQuery(sql);
         
+        connection.close();
+        
 		return result;
     }
     
@@ -67,20 +70,39 @@ public class ContactProgram {
 		System.out.println(endDate);
 		System.out.println(guestAmount);
 		
+		connection.close();
+		
 		return result;
     }
     
     
     //can be changed or removed
-    public static ResultSet showUserProfile() throws SQLException {
+    public static ResultSet showUserProfile(Object sin) throws SQLException {
     	Connection connection = DriverManager.getConnection(jdbcURL, username, password);
-    	String sql = "SELECT * FROM customer";
+    	String sql = "SELECT * FROM customer WHERE sin=" + sin.toString();
     	
     	Statement statement = connection.createStatement();
         
         ResultSet result = statement.executeQuery(sql);
         
+        connection.close();
+        
         return result;
+    }
+    
+    public static void updateUserProfile(int sin, Object fullname, Object address) throws SQLException{
+    	Connection connection = DriverManager.getConnection(jdbcURL, username, password);
+    	System.out.println("check" + address);
+    	
+    	String sql = "UPDATE customer "
+                + "SET customeraddress = ? "
+                + "WHERE sin = ?";
+        PreparedStatement pstmt = connection.prepareStatement(sql);
+        pstmt.setString(1, address.toString());
+        pstmt.setInt(2, sin);
+        
+        pstmt.executeUpdate();
+        connection.close();
     }
     
     public static boolean verifyCustomer(String SIN) throws SQLException{
@@ -96,10 +118,13 @@ public class ContactProgram {
         	counter++;
         }
         
+        connection.close();
+        
         if (counter == 0) {
         	return false;
         }else {
         	return true;
         }
+        
     }	
 }

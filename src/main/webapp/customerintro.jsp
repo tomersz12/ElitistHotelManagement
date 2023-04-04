@@ -8,7 +8,12 @@
 <body>
 
 	<div class="navbar">
-		<a href = "userprofile.jsp"><button class="profile">Profile</button></a>
+		<%Object sin = request.getAttribute("userSin");%>
+		<form action="${pageContext.request.contextPath}/MyServlet" method="POST">
+			<input type="hidden" name="USERSIN" value=<%=sin%>>
+			<input type="submit" name="Button" class="profile" value="Profile">
+		</form>
+		<!-- <a href = "userprofile.jsp"><button class="profile">Profile</button></a> -->
 		<h2>Elitest Hotel Manager</h2>
 	</div>
 	
