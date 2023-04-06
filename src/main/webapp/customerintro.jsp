@@ -7,13 +7,12 @@
 </head>
 <body>
 
+	<%Object sin = request.getAttribute("userSin");%>
 	<div class="navbar">
-		<%Object sin = request.getAttribute("userSin");%>
 		<form action="${pageContext.request.contextPath}/MyServlet" method="POST">
 			<input type="hidden" name="USERSIN" value=<%=sin%>>
 			<input type="submit" name="Button" class="profile" value="Profile">
 		</form>
-		<!-- <a href = "userprofile.jsp"><button class="profile">Profile</button></a> -->
 		<h2>Elitest Hotel Manager</h2>
 	</div>
 	
@@ -28,9 +27,10 @@
 			<input type="text" class="stars" name = "starrating" placeholder="Star Rating?">
 			<input type="text" class="avaiable" name = "roomsfree" placeholder="How Many Rooms?">
 			<input type="text" class="price" name = "price" placeholder="Max Price?">
+			<input type="hidden" name="USERSINBOOKING" value=<%=sin%>>
 			
-			<input type="submit" name="Button" class="submit" value="Find Now!"> 
-			<input type="submit" name="Button" class="showAll" value="Show All!">
+<!-- 			<input type="submit" name="Button" class="submit" value="Find Now!"> 
+ -->			<input type="submit" name="Button" class="showAll" value="Show All!">
 		</form>
 	</div>
 	

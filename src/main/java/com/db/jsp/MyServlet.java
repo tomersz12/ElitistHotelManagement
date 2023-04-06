@@ -2,6 +2,7 @@ package com.db.jsp;
 
 import java.io.IOException;
 import java.sql.SQLException;
+import java.time.LocalDate;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -48,10 +49,6 @@ public class MyServlet extends HttpServlet{
 			String userAddress = request.getParameter("address");
 			
 			request.setAttribute("userSin", userSinChange);
-//			request.setAttribute("nameChange", userFullName);
-//			request.setAttribute("addressChange", userAddress);
-//			request.setAttribute("registerDateChange", userDateOfRegister);
-			System.out.println("here: " + userSinChange);
 			
 			try {
 				ContactProgram.updateUserProfile(Integer.parseInt(userSinChange), userFullName, userAddress);
@@ -62,7 +59,31 @@ public class MyServlet extends HttpServlet{
 			request.getRequestDispatcher("/customerintro.jsp").forward(request, response);
 
 			
-		//filter stuff
+		//booking
+		}else if ("Book Now!".equals(button)) {
+			String chosenRoomID = request.getParameter("roomData");
+			String chosenSIN = request.getParameter("userSinFinal");
+			String bookingStartDate = request.getParameter("bookingStart");
+			String bookingEndDate = request.getParameter("bookingEnd");
+			
+//			request.setAttribute("roomID", chosenRoomID);
+//			request.setAttribute("bookingSin", chosenSIN);
+//			request.setAttribute("startDateForBooking", bookingStartDate);
+//			request.setAttribute("endDateForBooking", bookingEndDate);
+			
+			System.out.println(chosenRoomID);
+			System.out.println(chosenSIN);
+			System.out.println(bookingStartDate);
+			System.out.println(bookingEndDate);
+			
+			try {
+				ContactProgram.createBooking(Integer.parseInt(chosenRoomID), Integer.parseInt(chosenSIN), bookingStartDate, bookingEndDate);
+			} catch (SQLException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+			request.getRequestDispatcher("/customerintro.jsp").forward(request, response);
+			
 		}else {
 			String chosenCity = request.getParameter("city");
 			String chosenStartDate = request.getParameter("startdate");
@@ -72,6 +93,7 @@ public class MyServlet extends HttpServlet{
 			String chosenRatings = request.getParameter("starrating");
 			String chosenNumberOfRooms = request.getParameter("roomsfree");
 			String chosenPrice = request.getParameter("price");
+			String sinForBooking = request.getParameter("USERSINBOOKING");
 			
 			request.setAttribute("chosenCity", chosenCity);
 			request.setAttribute("chosenStartDate", chosenStartDate);
@@ -81,6 +103,7 @@ public class MyServlet extends HttpServlet{
 			request.setAttribute("chosenRatings", chosenRatings);
 			request.setAttribute("chosenNumberOfRooms", chosenNumberOfRooms);
 			request.setAttribute("chosenPrice", chosenPrice);
+			request.setAttribute("userinfo", sinForBooking);
 			
 			request.getRequestDispatcher("/genericbookingscreen.jsp").forward(request, response);
 		}

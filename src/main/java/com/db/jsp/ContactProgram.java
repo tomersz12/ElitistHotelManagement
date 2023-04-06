@@ -6,7 +6,9 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.time.LocalDate;
 import java.util.Date;
+import java.util.Random;
 
 import javax.script.ScriptEngine;
 import javax.script.ScriptEngineManager;
@@ -52,9 +54,10 @@ public class ContactProgram {
 		return result;
     }
     
+    //show all the hotels that satisfy filters
     public static ResultSet showFiltered(Object city, Object startDate, Object endDate, Object guestAmount, Object hotel, Object rating, Object numberOfRooms, Object price) throws SQLException{
     	Connection connection = DriverManager.getConnection(jdbcURL, username, password);
-    	String finalSql = "SELECT hotelchain.hotelname, hotelbranch.starrating, hotelbranch.numberofrooms, hotelbranch.branchaddress FROM hotelchain INNER JOIN hotelbranch ON hotelchain.hotelid = hotelbranch.hotelid INNER JOIN hotelroom ON hotelroom.branchid = hotelbranch.branchid WHERE ";
+    	String finalSql = "SELECT hotelchain.hotelname, hotelbranch.starrating, hotelbranch.numberofrooms, hotelbranch.branchaddress, hotelroom.roomid FROM hotelchain INNER JOIN hotelbranch ON hotelchain.hotelid = hotelbranch.hotelid INNER JOIN hotelroom ON hotelroom.branchid = hotelbranch.branchid WHERE ";
     	
     	String cityPortion;
     	String guestAmountPortion;
@@ -136,6 +139,7 @@ public class ContactProgram {
         return result;
     }
     
+    //Update user information
     public static void updateUserProfile(int sin, Object fullname, Object address) throws SQLException{
     	Connection connection = DriverManager.getConnection(jdbcURL, username, password);
     	System.out.println("check" + address);
@@ -151,6 +155,7 @@ public class ContactProgram {
         connection.close();
     }
     
+    //Verify login for customers
     public static boolean verifyCustomer(String SIN) throws SQLException{
     	int counter = 0;
     	Connection connection = DriverManager.getConnection(jdbcURL, username, password);
@@ -172,5 +177,34 @@ public class ContactProgram {
         	return true;
         }
         
-    }	
+    }
+    
+    public static void createBooking(int roomID, int sin, String start, String end) throws SQLException{
+    	Connection connection = DriverManager.getConnection(jdbcURL, username, password);
+    	Random rand = new Random();
+    	String name = "";
+    	int randomBookingID = rand.nextInt(89999) + 10000;
+    	
+    	String getName = "SELECT * FROM customer WHERE sin=" + sin;
+    	Statement statement = connection.createStatement();
+        ResultSet result = statement.executeQuery(getName);
+        while(result.next()) {
+        	name = result.getString(2);
+        }
+
+    	
+    	String sql = "INSERT INTO booking VALUES (?, ?, ?, ?, ?, ?," + false + ")";
+    	PreparedStatement insert = connection.prepareStatement(sql);
+    	
+    	insert.setInt(1, randomBookingID);
+    	insert.setInt(2, sin);
+    	insert.setInt(3, roomID);
+    	insert.setString(4, name);
+    	insert.setDate(5, java.sql.Date.valueOf(start));
+    	insert.setDate(6, java.sql.Date.valueOf(end));
+//    	insert.setString(7, "false");
+    	
+    	insert.executeUpdate();
+        connection.close();
+    }
 }
