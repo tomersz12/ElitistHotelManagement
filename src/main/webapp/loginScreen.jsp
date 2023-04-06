@@ -16,7 +16,7 @@
 			<br></br>
 			<input type = "submit" value = "userSubmit" name = "Button">
 		</form>
-	</div>		
+	</div>	
 	<br></br>
 	<button class="EmployeeLogin">Employee Login</button>
 	

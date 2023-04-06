@@ -68,11 +68,19 @@ public class MyServlet extends HttpServlet{
 			String chosenStartDate = request.getParameter("startdate");
 			String chosenEndDate = request.getParameter("enddate");
 			String chosenGuestAmount = request.getParameter("guestamount");
+			String chosenHotel = request.getParameter("hotelname");
+			String chosenRatings = request.getParameter("starrating");
+			String chosenNumberOfRooms = request.getParameter("roomsfree");
+			String chosenPrice = request.getParameter("price");
 			
 			request.setAttribute("chosenCity", chosenCity);
 			request.setAttribute("chosenStartDate", chosenStartDate);
 			request.setAttribute("chosenEndDate", chosenEndDate);
 			request.setAttribute("chosenGuestAmount", chosenGuestAmount);
+			request.setAttribute("chosenHotel", chosenHotel);
+			request.setAttribute("chosenRatings", chosenRatings);
+			request.setAttribute("chosenNumberOfRooms", chosenNumberOfRooms);
+			request.setAttribute("chosenPrice", chosenPrice);
 			
 			request.getRequestDispatcher("/genericbookingscreen.jsp").forward(request, response);
 		}

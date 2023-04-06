@@ -23,7 +23,12 @@
 			<input type="text" class="destination" name = "city" placeholder="Where To?">
 			<input type="date" class="startDate" name = "startdate" placeholder="Start Date">
 			<input type="date" class="endDate" name = "enddate" placeholder="End Date"> 
-			<input type="number" class="guests" name = "guestamount" placeholder="Number of Guests?" min="1" max="10"> 
+			<input type="text" class="guests" name = "guestamount" placeholder="Number of Guests?">
+			<input type="text" class="hotelchain" name = "hotelname" placeholder="Name of Hotel?"> 
+			<input type="text" class="stars" name = "starrating" placeholder="Star Rating?">
+			<input type="text" class="avaiable" name = "roomsfree" placeholder="How Many Rooms?">
+			<input type="text" class="price" name = "price" placeholder="Max Price?">
+			
 			<input type="submit" name="Button" class="submit" value="Find Now!"> 
 			<input type="submit" name="Button" class="showAll" value="Show All!">
 		</form>

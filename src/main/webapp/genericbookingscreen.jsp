@@ -38,8 +38,12 @@
 			<%Object test1 = request.getAttribute("chosenCity"); %>
 			<%Object test2 = request.getAttribute("chosenStartDate"); %>
 			<%Object test3 = request.getAttribute("chosenEndDate"); %>
-			<%Object test4 = request.getAttribute("choseGuestAmount"); %>
-			<%ResultSet resultset = ContactProgram.showFiltered(test1, test2, test3, test4); %>
+			<%Object test4 = request.getAttribute("chosenGuestAmount"); %>
+			<%Object test5 = request.getAttribute("chosenHotel"); %>
+			<%Object test6 = request.getAttribute("chosenRatings"); %>
+			<%Object test7 = request.getAttribute("chosenNumberOfRooms"); %>
+			<%Object test8 = request.getAttribute("chosenPrice"); %>
+			<%ResultSet resultset = ContactProgram.showFiltered(test1, test2, test3, test4, test5, test6, test7, test8); %>
 			<% while(resultset.next()){ %>
 			<TR>
 				<TD><%= resultset.getString(1) %></TD>

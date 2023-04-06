@@ -138,11 +138,69 @@ INSERT INTO hotelchain VALUES (7431, '75 Laurier Avenue', 8, 'AirBnB');
 INSERT INTO hotelchain VALUES (9845, '210 York Street', 11, 'Tomer Lodges');
 INSERT INTO hotelchain VALUES (5498, '290 Besserer Street', 10, 'Wang Resorts');
 
--- Marriott Branches
+--branches
+--branchid, hotelid, starrating, numberofrooms, branchaddress
+-- Marriott Branches (More ontario focused)
 INSERT INTO hotelbranch VALUES (911, 1234, 5, 5, 'Ottawa');
+INSERT INTO hotelbranch VALUES (962, 1234, 4, 7, 'Ottawa');
+INSERT INTO hotelbranch VALUES (914, 1234, 5, 6, 'Toronto');
+INSERT INTO hotelbranch VALUES (986, 1234, 5, 4, 'Toronto');
+INSERT INTO hotelbranch VALUES (954, 1234, 4, 4, 'Kitchner');
+INSERT INTO hotelbranch VALUES (942, 1234, 3, 3, 'London');
+INSERT INTO hotelbranch VALUES (902, 1234, 3, 3, 'Hamilton');
+INSERT INTO hotelbranch VALUES (939, 1234, 2, 4, 'Kingston');
+
+-- Hilton Branches (More East Coast focused)
+INSERT INTO hotelbranch VALUES (531, 5432, 5, 5, 'Montreal');
+INSERT INTO hotelbranch VALUES (552, 5432, 4, 4, 'Montreal');
+INSERT INTO hotelbranch VALUES (594, 5432, 5, 6, 'Toronto');
+INSERT INTO hotelbranch VALUES (581, 5432, 1, 3, 'Ottawa');
+INSERT INTO hotelbranch VALUES (536, 5432, 4, 4, 'Charlottetown');
+INSERT INTO hotelbranch VALUES (542, 5432, 3, 5, 'Halifax');
+INSERT INTO hotelbranch VALUES (512, 5432, 3, 4, 'Quebec-City');
+INSERT INTO hotelbranch VALUES (546, 5432, 2, 3, 'St-Johns');
+
+-- AirBnB Branches (More West Coast focused)
+INSERT INTO hotelbranch VALUES (211, 7431, 5, 5, 'Vancouver');
+INSERT INTO hotelbranch VALUES (234, 7431, 4, 4, 'Victoria');
+INSERT INTO hotelbranch VALUES (262, 7431, 4, 4, 'Edmonton');
+INSERT INTO hotelbranch VALUES (273, 7431, 5, 3, 'Edmonton');
+INSERT INTO hotelbranch VALUES (219, 7431, 1, 2, 'Calgary');
+INSERT INTO hotelbranch VALUES (206, 7431, 4, 4, 'Regina');
+INSERT INTO hotelbranch VALUES (291, 7431, 3, 7, 'Winnipeg');
+INSERT INTO hotelbranch VALUES (224, 7431, 3, 5, 'Saskatoon');
+INSERT INTO hotelbranch VALUES (241, 7431, 2, 3, 'Nanaimo');
+
+-- Tomer Lodges Branches (US focused)
+INSERT INTO hotelbranch VALUES (714, 9845, 5, 5, 'Virginia');
+INSERT INTO hotelbranch VALUES (732, 9845, 4, 5, 'Los-Angeles');
+INSERT INTO hotelbranch VALUES (792, 9845, 4, 7, 'Los-Angeles');
+INSERT INTO hotelbranch VALUES (708, 9845, 5, 6, 'Chicago');
+INSERT INTO hotelbranch VALUES (719, 9845, 1, 5, 'Detroit');
+INSERT INTO hotelbranch VALUES (706, 9845, 4, 5, 'New-York-City');
+INSERT INTO hotelbranch VALUES (791, 9845, 3, 7, 'Tampa-Bay');
+INSERT INTO hotelbranch VALUES (777, 9845, 3, 5, 'Seattle');
+INSERT INTO hotelbranch VALUES (711, 9845, 2, 5, 'Portland');
+
+-- Wang's Resorts Branches (Everywhere focused)
+INSERT INTO hotelbranch VALUES (174, 5498, 5, 5, 'Toronto');
+INSERT INTO hotelbranch VALUES (118, 5498, 4, 5, 'Los-Angeles');
+INSERT INTO hotelbranch VALUES (126, 5498, 4, 7, 'Vancouver');
+INSERT INTO hotelbranch VALUES (157, 5498, 5, 6, 'Toronto');
+INSERT INTO hotelbranch VALUES (195, 5498, 1, 5, 'Calgary');
+INSERT INTO hotelbranch VALUES (136, 5498, 4, 5, 'New-York-City');
+INSERT INTO hotelbranch VALUES (181, 5498, 3, 7, 'Calgary');
+INSERT INTO hotelbranch VALUES (165, 5498, 3, 5, 'Detroit');
+INSERT INTO hotelbranch VALUES (196, 5498, 2, 5, 'Tampa-Bay');
+
+--rooms(roomid, branchid, price, roomcapacity, typeofview, extendability)
+INSERT INTO hotelroom VALUES (12345, 911, 103.56, 4, 'sea', true);
+INSERT INTO hotelroom VALUES (12536, 911, 123.56, 5, 'sea', false);
+INSERT INTO hotelroom VALUES (12466, 911, 87.46, 3, 'sea', false);
 
 
--- Customers
+
+-- Customers 
 INSERT INTO customer VALUES (929002842, 'Justin Wang', '75 Tambrook Blvd', '2023-03-15');
 INSERT INTO customer VALUES (123456789, 'Tomer Szulsztien', '210 Waterhouse Drive', '2023-03-15');
 

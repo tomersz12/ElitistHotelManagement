@@ -40,7 +40,8 @@ public class ContactProgram {
     
     public static ResultSet showAll() throws SQLException{
     	Connection connection = DriverManager.getConnection(jdbcURL, username, password);
-    	String sql = "SELECT * FROM hotelchain";
+    	String sql = "SELECT hotelchain.hotelid, hotelbranch.starrating, hotelbranch.numberofrooms, hotelbranch.branchaddress FROM hotelchain INNER JOIN hotelbranch ON hotelchain.hotelid = hotelbranch.hotelid";
+
         
         Statement statement = connection.createStatement();
         
@@ -51,24 +52,69 @@ public class ContactProgram {
 		return result;
     }
     
-    public static ResultSet showFiltered(Object city, Object startDate, Object endDate, Object guestAmount) throws SQLException{
+    public static ResultSet showFiltered(Object city, Object startDate, Object endDate, Object guestAmount, Object hotel, Object rating, Object numberOfRooms, Object price) throws SQLException{
     	Connection connection = DriverManager.getConnection(jdbcURL, username, password);
-    	String sql;
+    	String finalSql = "SELECT hotelchain.hotelname, hotelbranch.starrating, hotelbranch.numberofrooms, hotelbranch.branchaddress FROM hotelchain INNER JOIN hotelbranch ON hotelchain.hotelid = hotelbranch.hotelid INNER JOIN hotelroom ON hotelroom.branchid = hotelbranch.branchid WHERE ";
     	
-    	if (city.equals("Toronto")) {
-    		sql = "SELECT * FROM hotelBranch";
+    	String cityPortion;
+    	String guestAmountPortion;
+    	String hotelNamePortion;
+    	String ratingPortion;
+    	String numberOfRoomsPortion;
+    	String pricePortion;
+    	
+    	if (city.equals("")) {
+    		cityPortion = "";
     	}else {
-    		sql = "SELECT * FROM hotelchain";
+    		cityPortion = "hotelbranch.branchaddress = " + "\'" + city + "\'";
     	}
+   	
+    	if (guestAmount.equals("")) {
+    		guestAmountPortion = "";
+    	}else {
+    		guestAmountPortion = " AND hotelroom.roomcapacity <= " + "\'" + guestAmount + "\'";
+    	}
+    	
+    	if (hotel.equals("")) {
+    		hotelNamePortion = "";
+    	}else {
+    		hotelNamePortion = " AND hotelchain.hotelname = " + "\'" + hotel + "\'";
+    	}
+    	
+    	if (rating.equals("")) {
+    		ratingPortion = "";
+    	}else {
+    		ratingPortion = " AND hotelbranch.starrating >= " + "\'" + rating + "\'";
+    	}
+    	
+    	if (numberOfRooms.equals("")) {
+    		numberOfRoomsPortion = "";
+    	}else {
+    		numberOfRoomsPortion = " AND hotelbranch.numberofrooms >= " + "\'" + numberOfRooms + "\'";
+    	}
+    	
+    	if (price.equals("")) {
+    		pricePortion = "";
+    	}else {
+    		pricePortion = " AND hotelroom.price >= " + "\'" + price + "\'";
+    	}
+    	
+    	finalSql = finalSql + cityPortion + guestAmountPortion + hotelNamePortion + ratingPortion + numberOfRoomsPortion + pricePortion;
+    	
+    	System.out.println(finalSql);
         
         Statement statement = connection.createStatement();
         
-        ResultSet result = statement.executeQuery(sql);
+        ResultSet result = statement.executeQuery(finalSql);
         
 		System.out.println(city);
 		System.out.println(startDate);
 		System.out.println(endDate);
 		System.out.println(guestAmount);
+		System.out.println(hotel);
+		System.out.println(rating);
+		System.out.println(numberOfRooms);
+		System.out.println(price);
 		
 		connection.close();
 		
