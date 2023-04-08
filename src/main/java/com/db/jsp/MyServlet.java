@@ -78,6 +78,8 @@ public class MyServlet extends HttpServlet{
 				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
+			
+			request.setAttribute("userSin", chosenSIN);
 			request.getRequestDispatcher("/customerintro.jsp").forward(request, response);
 		
 			//filter stuff

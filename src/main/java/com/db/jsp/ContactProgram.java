@@ -76,7 +76,7 @@ public class ContactProgram {
     	if (guestAmount.equals("")) {
     		guestAmountPortion = "";
     	}else {
-    		guestAmountPortion = " AND hotelroom.roomcapacity <= " + "\'" + guestAmount + "\'";
+    		guestAmountPortion = " AND hotelroom.roomcapacity >= " + "\'" + guestAmount + "\'";
     	}
     	
     	if (hotel.equals("")) {
