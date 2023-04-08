@@ -1,0 +1,44 @@
+@charset "UTF-8";
+
+::placeholder {
+	color: white;
+	font-size: 28px;
+	font-style: "bold"
+}
+
+.destination {
+	background-color: #FA6B6B;
+	color: #FFFFFF;
+	border-radius: 40px;
+	width: 428px;
+	height: 86px;
+}
+
+.startDate {
+	background-color: #FA6B6B;
+	color: #FFFFFF;
+	border-radius: 40px;
+	width: 124px;
+	height: 86px;
+}
+
+.endDate {
+	background-color: #FA6B6B;
+	color: #FFFFFF;
+	border-radius: 40px;
+	width: 124px;
+	height: 86px;
+}
+
+.guests {
+	background-color: #FA6B6B;
+	color: #FFFFFF;
+	border-radius: 40px;
+	width: 428px;
+	height: 86px;
+}
+
+.submit {
+	width: 100px;
+	height: 86px;
+}

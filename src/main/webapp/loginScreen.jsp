@@ -3,7 +3,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-<link href="loginStyles.css" rel="stylesheet">
+<link href="css/loginStyles.css" rel="stylesheet">
 <meta charset="UTF-8">
 <title>Please Login</title>
 </head>

@@ -5,7 +5,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<link href="genericbookingStyles.css" rel="stylesheet">
+<link href="css/genericbookingStyles.css" rel="stylesheet">
 <title>Booking Screen</title>
 </head>
 <body>
@@ -13,8 +13,7 @@
 	<%Object sinUser = request.getAttribute("userinfo");%>
 	<div class="title">
 		<h1>Find a Hotel For You!</h1>
-		<h3>Use our search feature to narrow down the hotels that
-			accommodate you!</h3>
+		<h3>Pick a room that fits you!</h3>
 	</div>
 	
 	<div class="tableOfHotels">
@@ -23,7 +22,11 @@
 				<TH>Hotel Chain</TH>
 				<TH>Branch Rating</TH>
 				<TH>Number of Rooms</TH>
-				<TH>Branch Address</TH>
+				<TH>City</TH>
+				<TH>Room Price</TH>
+				<TH>Room Capacity</TH>
+				<TH>View Type</TH>
+				<TH>Can I Extend My Stay?</TH>
 				<TH></TH>
 			</TR>
 			<%Object test1 = request.getAttribute("chosenCity"); %>
@@ -39,9 +42,13 @@
 			<% while(resultset.next()){ %>
 			<TR>
 				<TD><%= resultset.getString(1) %></TD>
-				<TD><%= resultset.getString(2) %></TD>
+				<TD><%= resultset.getString(2) %>/5 Stars</TD>
 				<TD><%= resultset.getString(3) %></TD>
 				<TD><%= resultset.getString(4) %></TD>
+				<TD>$<%= resultset.getString(6) %></TD>
+				<TD><%= resultset.getString(7) %></TD>
+				<TD><%= resultset.getString(8) %></TD>
+				<TD><%= resultset.getString(9) %></TD>
 				<TD><form action="${pageContext.request.contextPath}/MyServlet" method="post">
 				<input type="submit" name="Button" class="bookButton" value="Book Now!"> 
 				<input type="hidden" name="roomData" value=<%=resultset.getString(5)%>>

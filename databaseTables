@@ -205,3 +205,21 @@ INSERT INTO customer VALUES (929002842, 'Justin Wang', '75 Tambrook Blvd', '2023
 INSERT INTO customer VALUES (123456789, 'Tomer Szulsztien', '210 Waterhouse Drive', '2023-03-15');
 
 UPDATE customer SET fullname = 'Justin Wang', customeraddress= '195 Besserer Street' WHERE sin = 929002842;
+
+
+
+-- Trigger
+CREATE OR REPLACE FUNCTION changeNameOfBooking()
+RETURNS TRIGGER AS $$
+BEGIN
+    UPDATE booking SET nameofresident = NEW.fullname WHERE sin = NEW.sin;
+    RETURN NEW;
+END;
+$$ LANGUAGE plpgsql;
+
+CREATE TRIGGER changeNameOfBooking
+AFTER UPDATE ON customer
+FOR EACH ROW
+EXECUTE FUNCTION changeNameOfBooking();
+
+

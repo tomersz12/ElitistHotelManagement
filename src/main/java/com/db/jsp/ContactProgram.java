@@ -57,7 +57,8 @@ public class ContactProgram {
     //show all the hotels that satisfy filters
     public static ResultSet showFiltered(Object city, Object startDate, Object endDate, Object guestAmount, Object hotel, Object rating, Object numberOfRooms, Object price) throws SQLException{
     	Connection connection = DriverManager.getConnection(jdbcURL, username, password);
-    	String finalSql = "SELECT hotelchain.hotelname, hotelbranch.starrating, hotelbranch.numberofrooms, hotelbranch.branchaddress, hotelroom.roomid FROM hotelchain INNER JOIN hotelbranch ON hotelchain.hotelid = hotelbranch.hotelid INNER JOIN hotelroom ON hotelroom.branchid = hotelbranch.branchid WHERE ";
+    	String finalSql = "SELECT hotelchain.hotelname, hotelbranch.starrating, hotelbranch.numberofrooms, hotelbranch.branchaddress, hotelroom.roomid, hotelroom.price, hotelroom.roomcapacity, hotelroom.typeofview, hotelroom.extendability"
+    			+ " FROM hotelchain INNER JOIN hotelbranch ON hotelchain.hotelid = hotelbranch.hotelid INNER JOIN hotelroom ON hotelroom.branchid = hotelbranch.branchid WHERE ";
     	
     	String cityPortion;
     	String guestAmountPortion;
@@ -145,11 +146,12 @@ public class ContactProgram {
     	System.out.println("check" + address);
     	
     	String sql = "UPDATE customer "
-                + "SET customeraddress = ? "
+                + "SET customeraddress = ?, fullname = ? "
                 + "WHERE sin = ?";
         PreparedStatement pstmt = connection.prepareStatement(sql);
         pstmt.setString(1, address.toString());
-        pstmt.setInt(2, sin);
+        pstmt.setString(2, fullname.toString());
+        pstmt.setInt(3, sin);
         
         pstmt.executeUpdate();
         connection.close();
@@ -202,9 +204,22 @@ public class ContactProgram {
     	insert.setString(4, name);
     	insert.setDate(5, java.sql.Date.valueOf(start));
     	insert.setDate(6, java.sql.Date.valueOf(end));
-//    	insert.setString(7, "false");
     	
     	insert.executeUpdate();
         connection.close();
+    }
+    
+    public static ResultSet getUserBookings(Object Sin) throws SQLException {
+    	Connection connection = DriverManager.getConnection(jdbcURL, username, password);
+    	String sql = "SELECT booking.bookingid, booking.sin, booking.nameofresident, booking.startdate, booking.enddate FROM booking WHERE sin=" + Sin;
+
+        Statement statement = connection.createStatement();
+        
+        ResultSet result = statement.executeQuery(sql);
+        
+        connection.close();
+        
+        return result;
+
     }
 }

@@ -2,7 +2,7 @@
 <%@ page import="com.db.jsp.* , java.sql.*"%>
 <html>
 <head>
-<link href="styles.css" rel="stylesheet">
+<link href="css/styles.css" rel="stylesheet">
 <title>Welcome!</title>
 </head>
 <body>

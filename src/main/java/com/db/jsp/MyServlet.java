@@ -66,10 +66,6 @@ public class MyServlet extends HttpServlet{
 			String bookingStartDate = request.getParameter("bookingStart");
 			String bookingEndDate = request.getParameter("bookingEnd");
 			
-//			request.setAttribute("roomID", chosenRoomID);
-//			request.setAttribute("bookingSin", chosenSIN);
-//			request.setAttribute("startDateForBooking", bookingStartDate);
-//			request.setAttribute("endDateForBooking", bookingEndDate);
 			
 			System.out.println(chosenRoomID);
 			System.out.println(chosenSIN);
@@ -83,7 +79,8 @@ public class MyServlet extends HttpServlet{
 				e.printStackTrace();
 			}
 			request.getRequestDispatcher("/customerintro.jsp").forward(request, response);
-			
+		
+			//filter stuff
 		}else {
 			String chosenCity = request.getParameter("city");
 			String chosenStartDate = request.getParameter("startdate");

@@ -1,0 +1,25 @@
+@charset "UTF-8";
+
+.title{
+	text-align: center;
+}
+
+.tableOfUserInfo{
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.changeInfoForm{
+	display:flex;
+  	justify-content: center;
+
+}
+
+.bookingTitle{
+	text-align: center;
+}
+
+.userbookings{
+	margin-left: auto;
+	margin-right: auto;
+}

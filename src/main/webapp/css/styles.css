@@ -1,0 +1,139 @@
+@charset "UTF-8";
+
+body {
+	margin: 0;
+	font-family: Arial, Helvetica, sans-serif;
+	background-color: #F0EAD6;
+}
+
+.navbar {
+	overflow: hidden;
+	height: 50px;
+	background-color: #333;
+}
+
+.navbar input {
+	color: #f2f2f2;
+	text-align: center;
+	padding: 14px 16px;
+	text-decoration: none;
+	font-size: 17px;
+	background-color: #ddd;
+	color: black;
+	float: right;
+}
+
+.navbar h2 {
+	position:relative;
+	color: red;
+	top: -14px;
+}
+
+.stockImage {
+	display: grid;
+	align-items: center;
+	grid-template-columns: 1fr 15fr 1fr;
+	column-gap: 55px;
+}
+
+.vacation {
+	margin-top: 40px;
+	margin-left: 40px;
+	width: 480px;
+	height: 330px;
+}
+
+.hotelChains {
+	background-color: #333;
+	align-items: center;
+}
+
+.marriot {
+	position: absolute;
+	width: 176px;
+	height: 305px;
+	left: 68px;
+	top: 510px;
+	background-color: #04AA6D;
+	border-radius: 40px;
+	text-align: center;
+}
+
+.buttonMarriot {
+	text-align: center;
+	border: none;
+	border-radius: 40px;
+	background-color: #FFFFFF;
+}
+
+.hilton {
+	position: absolute;
+	width: 176px;
+	height: 305px;
+	left: 330px;
+	top: 510px;
+	background-color: #04AA6D;
+	border-radius: 40px;
+	text-align: center;
+}
+
+.buttonHilton {
+	text-align: center;
+	border: none;
+	border-radius: 40px;
+	background-color: #FFFFFF;
+}
+
+.airBnb {
+	position: absolute;
+	width: 176px;
+	height: 305px;
+	left: 617px;
+	top: 510px;
+	background-color: #04AA6D;
+	border-radius: 40px;
+	text-align: center;
+}
+
+.buttonAirbnb {
+	text-align: center;
+	border: none;
+	border-radius: 40px;
+	background-color: #FFFFFF;
+}
+
+.tomerTravelLodges {
+	position: absolute;
+	width: 176px;
+	height: 305px;
+	left: 904px;
+	top: 510px;
+	background-color: #04AA6D;
+	border-radius: 40px;
+	text-align: center;
+}
+
+.buttonTomerLodge {
+	text-align: center;
+	border: none;
+	border-radius: 40px;
+	background-color: #FFFFFF;
+}
+
+.wangResorts {
+	position: absolute;
+	width: 176px;
+	height: 305px;
+	left: 1196px;
+	top: 510px;
+	background-color: #04AA6D;
+	border-radius: 40px;
+	text-align: center;
+}
+
+.buttonWangResort {
+	text-align: center;
+	border: none;
+	border-radius: 40px;
+	background-color: #FFFFFF;
+}
