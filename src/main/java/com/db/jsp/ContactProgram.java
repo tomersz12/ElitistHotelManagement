@@ -72,7 +72,7 @@ public class ContactProgram {
     	}else {
     		cityPortion = "hotelbranch.branchaddress = " + "\'" + city + "\'";
     	}
-   	
+    	   	
     	if (guestAmount.equals("")) {
     		guestAmountPortion = "";
     	}else {
@@ -218,6 +218,7 @@ public class ContactProgram {
         
     }
     
+    //create a booking
     public static void createBooking(int roomID, int sin, String start, String end) throws SQLException{
     	Connection connection = DriverManager.getConnection(jdbcURL, username, password);
     	Random rand = new Random();
@@ -246,6 +247,7 @@ public class ContactProgram {
         connection.close();
     }
     
+    //delete booking
     public static void deleteBooking(int bookingID) throws SQLException{
     	Connection connection = DriverManager.getConnection(jdbcURL, username, password);
     	
@@ -256,6 +258,7 @@ public class ContactProgram {
         connection.close();
     }
     
+    //get all bookings per user
     public static ResultSet getUserBookings(Object Sin) throws SQLException {
     	Connection connection = DriverManager.getConnection(jdbcURL, username, password);
     	String sql = "SELECT booking.bookingid, booking.sin, booking.nameofresident, booking.startdate, booking.enddate FROM booking WHERE sin=" + Sin;
@@ -270,6 +273,7 @@ public class ContactProgram {
 
     }
     
+    //get bookings from specific branch
     public static ResultSet getBranchBookings(Object BranchID) throws SQLException {
     	Connection connection = DriverManager.getConnection(jdbcURL, username, password);
     	String sql = "SELECT booking.bookingid, booking.sin, booking.roomid, booking.nameofresident, booking.startdate, booking.enddate, booking.checkin FROM booking INNER JOIN hotelroom ON booking.roomID = hotelroom.roomID WHERE hotelroom.branchID=" + BranchID;
@@ -282,5 +286,17 @@ public class ContactProgram {
         
         return result;
 
+    }
+    
+    public static ResultSet createAreaView() throws SQLException {
+    	Connection connection = DriverManager.getConnection(jdbcURL, username, password);
+    	String sql = "SELECT * FROM RoomsPerArea";
+    	Statement statement = connection.createStatement();
+        
+        ResultSet result = statement.executeQuery(sql);
+        
+        return result;
+    	
+    	
     }
 }

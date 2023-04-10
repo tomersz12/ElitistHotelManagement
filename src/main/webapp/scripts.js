@@ -10,6 +10,7 @@ customerButton.addEventListener("click", () =>{
 	}else{
 		userForm.style.display = 'block';
 	}
+	console.log("button works!");
 });
 
 //Employee Log in Button
@@ -24,12 +25,3 @@ employeeButton.addEventListener("click", () =>{
 		employeeForm.style.display = 'block';
 	}
 });
-
-//Date
-
-n =  new Date();
-y = n.getFullYear();
-m = n.getMonth() + 1;
-d = n.getDate();
-
-document.getElementById("date").innerHTML = y + "-" + m + "-" + d;

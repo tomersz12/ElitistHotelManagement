@@ -20,7 +20,7 @@
 	<br></br>
 	
 	<button class="EmployeeLogin" id = "employeeLogin">Employee Login</button>
-	<div class = "employeeLoginForm" id = "employeeForm">
+		<div class = "employeeLoginForm" id = "employeeForm">
 		<h3 class = "loginEmployeeTitle">EMPLOYEE LOGIN:</h3>
 		<form id = "employeeLogin" action="${pageContext.request.contextPath}/MyServlet" method="POST">
 			<input type = "text" class="employeeLogin" name="employeeSIN" placeholder="Enter Your SIN Number">

@@ -21,7 +21,7 @@
 			method="POST">
 			<input type="text" class="destination" name = "city" placeholder="Where To?">
 			<input type="date" class="startDate" name = "startdate" placeholder="Start Date" min=<%=java.time.LocalDate.now()%>>
-			<input type="date" class="endDate" name = "enddate" placeholder="End Date"> 
+			<input type="date" class="endDate" name = "enddate" placeholder="End Date" min=<%=java.time.LocalDate.now()%>> 
 			<input type="text" class="guests" name = "guestamount" placeholder="Number of Guests?">
 			<input type="text" class="hotelchain" name = "hotelname" placeholder="Name of Hotel?"> 
 			<input type="text" class="stars" name = "starrating" placeholder="Star Rating?">
@@ -29,8 +29,8 @@
 			<input type="text" class="price" name = "price" placeholder="Max Price?">
 			<input type="hidden" name="USERSINBOOKING" value=<%=sin%>>
 			
-<!-- 			<input type="submit" name="Button" class="submit" value="Find Now!"> 
- -->			<input type="submit" name="Button" class="showAll" value="Show All!">
+	 		<input type="submit" name="Button" class="submit" value="Find Now!"> 
+			<input type="submit" name="Button" class="showAll" value="Show All!">
 		</form>
 	</div>
 	

@@ -62,6 +62,7 @@
 				<TH>Full Name</TH>
 				<TH>Start Date</TH>
 				<TH>End Date</TH>
+				<TH>        </TH>
 			</TR>
 			<%ResultSet bookingset = ContactProgram.getUserBookings(sin); %>
 			<% while(bookingset.next()){ %>
@@ -71,6 +72,10 @@
 				<TD><%= bookingset.getString(3) %></TD>
 				<TD><%= bookingset.getString(4) %></TD>
 				<TD><%= bookingset.getString(5) %></TD>
+				<TD><form action="${pageContext.request.contextPath}/MyServlet" method="post">
+				<input type="submit" name="Button" class="cancelUserButton" value="Cancel My Booking"> 
+				<input type="hidden" name="bookingIDData" value=<%=bookingset.getString(1)%>>
+				<input type="hidden" name="userSINBooking" value=<%=bookingset.getString(2)%>></form></TD>
 			</TR>
 			<% } %>
 		</TABLE>

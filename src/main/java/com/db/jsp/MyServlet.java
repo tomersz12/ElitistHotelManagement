@@ -100,7 +100,7 @@ public class MyServlet extends HttpServlet{
 			request.setAttribute("userSin", chosenSIN);
 			request.getRequestDispatcher("/customerintro.jsp").forward(request, response);
 		
-			//filter stuff
+			//cancel booking on employee side
 		}else if ("Cancel Booking".equals(button)) {
 			String bookingID = request.getParameter("bookingID");
 			String employeeSIN = request.getParameter("employeeSIN");
@@ -114,9 +114,24 @@ public class MyServlet extends HttpServlet{
 			
 			request.setAttribute("employeeSIN", employeeSIN);
 			request.getRequestDispatcher("/employeeintro.jsp").forward(request, response);
-		
-			//filter stuff
-		}else {
+			
+			
+		}else if ("Cancel My Booking".equals(button)) {
+			String userBookingid = request.getParameter("bookingIDData");
+			String userSinFromBooking = request.getParameter("userSINBooking");
+			
+			try {
+				ContactProgram.deleteBooking(Integer.parseInt(userBookingid));
+			} catch (NumberFormatException | SQLException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+			
+			request.setAttribute("userSin", userSinFromBooking);
+			request.getRequestDispatcher("/customerintro.jsp").forward(request, response);
+			
+		//filter stuff
+		}else if ("Find Now!".equals(button)){
 			String chosenCity = request.getParameter("city");
 			String chosenStartDate = request.getParameter("startdate");
 			String chosenEndDate = request.getParameter("enddate");
@@ -138,6 +153,12 @@ public class MyServlet extends HttpServlet{
 			request.setAttribute("userinfo", sinForBooking);
 			
 			request.getRequestDispatcher("/genericbookingscreen.jsp").forward(request, response);
+			
+		}else {
+			String cityToView = request.getParameter("city");
+			request.setAttribute("chosenCity", cityToView);
+			
+			request.getRequestDispatcher("/hotelInAreaView.jsp").forward(request, response);
 		}
 	}
 	
