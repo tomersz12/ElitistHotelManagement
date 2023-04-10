@@ -18,11 +18,20 @@
 	border-radius: 40px;
 }
 
-.customerLoginForm {
+.customerLoginForm{
 	position: absolute;
 	width: 639px;
 	height: 114px;
 	left: 664px;
 	top: 404px;
+	display: none;
+}
+
+.employeeLoginForm{
+	position: absolute;
+	width: 639px;
+	height: 114px;
+	left: 664px;
+	top: 673px;
 	display: none;
 }

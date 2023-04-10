@@ -140,6 +140,19 @@ public class ContactProgram {
         return result;
     }
     
+    public static ResultSet showEmployeeProfile(Object sin) throws SQLException {
+    	Connection connection = DriverManager.getConnection(jdbcURL, username, password);
+    	String sql = "SELECT * FROM employee WHERE employeesin=" + sin.toString();
+    	
+    	Statement statement = connection.createStatement();
+        
+        ResultSet result = statement.executeQuery(sql);
+        
+        connection.close();
+        
+        return result;
+    }
+    
     //Update user information
     public static void updateUserProfile(int sin, Object fullname, Object address) throws SQLException{
     	Connection connection = DriverManager.getConnection(jdbcURL, username, password);
@@ -162,6 +175,30 @@ public class ContactProgram {
     	int counter = 0;
     	Connection connection = DriverManager.getConnection(jdbcURL, username, password);
     	String sql = "SELECT * FROM customer WHERE sin=" + SIN;
+    	
+    	Statement statement = connection.createStatement();
+        
+        ResultSet result = statement.executeQuery(sql);
+        
+        while(result.next()) {
+        	counter++;
+        }
+        
+        connection.close();
+        
+        if (counter == 0) {
+        	return false;
+        }else {
+        	return true;
+        }
+        
+    }
+    
+  //Verify login for employees
+    public static boolean verifyEmployee(String SIN) throws SQLException{
+    	int counter = 0;
+    	Connection connection = DriverManager.getConnection(jdbcURL, username, password);
+    	String sql = "SELECT * FROM employee WHERE employeesin=" + SIN;
     	
     	Statement statement = connection.createStatement();
         
@@ -209,9 +246,33 @@ public class ContactProgram {
         connection.close();
     }
     
+    public static void deleteBooking(int bookingID) throws SQLException{
+    	Connection connection = DriverManager.getConnection(jdbcURL, username, password);
+    	
+    	String sql = "DELETE FROM booking WHERE bookingID="+bookingID;
+    	PreparedStatement delete = connection.prepareStatement(sql);
+    	
+    	delete.executeUpdate();
+        connection.close();
+    }
+    
     public static ResultSet getUserBookings(Object Sin) throws SQLException {
     	Connection connection = DriverManager.getConnection(jdbcURL, username, password);
     	String sql = "SELECT booking.bookingid, booking.sin, booking.nameofresident, booking.startdate, booking.enddate FROM booking WHERE sin=" + Sin;
+
+        Statement statement = connection.createStatement();
+        
+        ResultSet result = statement.executeQuery(sql);
+        
+        connection.close();
+        
+        return result;
+
+    }
+    
+    public static ResultSet getBranchBookings(Object BranchID) throws SQLException {
+    	Connection connection = DriverManager.getConnection(jdbcURL, username, password);
+    	String sql = "SELECT booking.bookingid, booking.sin, booking.roomid, booking.nameofresident, booking.startdate, booking.enddate, booking.checkin FROM booking INNER JOIN hotelroom ON booking.roomID = hotelroom.roomID WHERE hotelroom.branchID=" + BranchID;
 
         Statement statement = connection.createStatement();
         

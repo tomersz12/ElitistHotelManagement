@@ -1,0 +1,15 @@
+@charset "UTF-8";
+
+h3 {
+	text-align: center;
+}
+
+.table{
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.submit {
+	width: 100px;
+	height: 86px;
+}

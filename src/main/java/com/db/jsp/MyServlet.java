@@ -37,6 +37,24 @@ public class MyServlet extends HttpServlet{
 			}
 		
 		//check login
+		}else if ("employeeSubmit".equals(button)) {
+			boolean check = false;
+			String employeeSIN = request.getParameter("employeeSIN");
+			try {
+				check = ContactProgram.verifyEmployee(employeeSIN);
+			} catch (SQLException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+			
+			if (check) {
+				request.setAttribute("employeeSin", employeeSIN);
+				request.getRequestDispatcher("/employeeintro.jsp").forward(request, response);
+			}else {
+				request.getRequestDispatcher("/loginScreen.jsp").forward(request, response);
+			}
+		
+		//check login
 		}else if ("Profile".equals(button)){
 			String usersin = request.getParameter("USERSIN");
 			request.setAttribute("userSin", usersin);
@@ -81,6 +99,21 @@ public class MyServlet extends HttpServlet{
 			
 			request.setAttribute("userSin", chosenSIN);
 			request.getRequestDispatcher("/customerintro.jsp").forward(request, response);
+		
+			//filter stuff
+		}else if ("Cancel Booking".equals(button)) {
+			String bookingID = request.getParameter("bookingID");
+			String employeeSIN = request.getParameter("employeeSIN");
+			
+			try {
+				ContactProgram.deleteBooking(Integer.parseInt(bookingID));
+			} catch (SQLException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+			
+			request.setAttribute("employeeSIN", employeeSIN);
+			request.getRequestDispatcher("/employeeintro.jsp").forward(request, response);
 		
 			//filter stuff
 		}else {

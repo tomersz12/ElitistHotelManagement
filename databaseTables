@@ -223,3 +223,7 @@ FOR EACH ROW
 EXECUTE FUNCTION changeNameOfBooking();
 
 
+-- Employees
+INSERT INTO employee VALUES (987654321, 'Tomer Justin', '800 King Edward Ave', 911);
+
+
