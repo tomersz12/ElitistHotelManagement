@@ -20,7 +20,7 @@
 		<form action="${pageContext.request.contextPath}/MyServlet"
 			method="POST">
 			<input type="text" class="destination" name = "city" placeholder="Where To?">
-			<input type="date" class="startDate" name = "startdate" placeholder="Start Date">
+			<input type="date" class="startDate" name = "startdate" placeholder="Start Date" min=<%=java.time.LocalDate.now()%>>
 			<input type="date" class="endDate" name = "enddate" placeholder="End Date"> 
 			<input type="text" class="guests" name = "guestamount" placeholder="Number of Guests?">
 			<input type="text" class="hotelchain" name = "hotelname" placeholder="Name of Hotel?"> 
