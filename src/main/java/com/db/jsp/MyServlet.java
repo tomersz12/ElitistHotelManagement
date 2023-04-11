@@ -214,6 +214,14 @@ public class MyServlet extends HttpServlet{
 			
 			request.getRequestDispatcher("/genericbookingscreen.jsp").forward(request, response);
 			
+		}else if("View Hotels".equals(button)) {
+			String hotelID = request.getParameter("hotelid");
+			
+			request.setAttribute("chosenHotelID", hotelID);
+			
+			request.getRequestDispatcher("/capacityView.jsp").forward(request, response);
+
+		//view for number of avaliable rooms per area
 		}else {
 			String cityToView = request.getParameter("city");
 			request.setAttribute("chosenCity", cityToView);

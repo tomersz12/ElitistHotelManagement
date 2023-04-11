@@ -31,6 +31,10 @@
 			
 	 		<input type="submit" name="Button" class="submit" value="Find Now!"> 
 			<input type="submit" name="Button" class="showAll" value="Show All!">
+			<br></br>
+			<input type="text" class="hotelID" name = "hotelid" placeholder="HotelID">
+			<input type="submit" name="Button" class="showRoomsOfHotel" value="View Hotels">
+			
 		</form>
 	</div>
 	

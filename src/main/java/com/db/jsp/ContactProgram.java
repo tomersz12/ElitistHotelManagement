@@ -17,7 +17,7 @@ import javax.script.ScriptEngineManager;
 
 public class ContactProgram {
 	static String jdbcURL = "jdbc:postgresql://localhost:5432/hotelmanagement";
-    static String username = "justinwang";
+    static String username = "postgres";
     static String password = "postwan07";
 
     public static String add() throws SQLException{
@@ -421,7 +421,20 @@ public class ContactProgram {
         ResultSet result = statement.executeQuery(sql);
         
         return result;
+    }
+    
+    public static ResultSet createCapacityView(Object HotelID) throws SQLException {
+    	Connection connection = DriverManager.getConnection(jdbcURL, username, password);
+    	String createView = "CREATE OR REPLACE VIEW CapacityView AS SELECT hotelchain.hotelname, hotelbranch.branchid, hotelroom.roomid, hotelroom.roomcapacity FROM hotelbranch INNER JOIN hotelroom ON hotelbranch.branchID = hotelroom.branchID INNER JOIN hotelchain ON hotelchain.hotelid = hotelbranch.hotelid WHERE hotelbranch.branchid = " + HotelID;
     	
+    	PreparedStatement insert = connection.prepareStatement(createView);
+    	insert.execute();
+    	
+    	String sql = "SELECT * FROM CapacityView";
+    	Statement statement = connection.createStatement();
+    	ResultSet result = statement.executeQuery(sql);
+
+		return result;
     	
     }
 }

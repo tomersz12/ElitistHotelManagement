@@ -190,8 +190,159 @@ INSERT INTO hotelbranch VALUES (196, 5498, 2, 5, 'Tampa-Bay');
 INSERT INTO hotelroom VALUES (12345, 911, 103.56, 4, 'sea', true);
 INSERT INTO hotelroom VALUES (12536, 911, 123.56, 5, 'sea', false);
 INSERT INTO hotelroom VALUES (12466, 911, 87.46, 3, 'sea', false);
+INSERT INTO hotelroom VALUES (12136, 911, 70.56, 2, 'sea', true);
+INSERT INTO hotelroom VALUES (12790, 911, 156.46, 6, 'mountain', false);
 
+INSERT INTO hotelroom VALUES (11145, 962, 113.56, 5, 'mountain', true);
+INSERT INTO hotelroom VALUES (11375, 962, 145.75, 6, 'sea', true);
+INSERT INTO hotelroom VALUES (11348, 962, 50.56, 1, 'sea', false);
+INSERT INTO hotelroom VALUES (11360, 962, 157.56, 7, 'mountain', true);
+INSERT INTO hotelroom VALUES (11995, 962, 94.66, 3, 'sea', true);
+INSERT INTO hotelroom VALUES (11975, 962, 80.36, 4, 'mountain', false);
+INSERT INTO hotelroom VALUES (11545, 962, 85.56, 4, 'sea', false);
 
+INSERT INTO hotelroom VALUES (13456, 914, 143.43, 5, 'sea', true);
+INSERT INTO hotelroom VALUES (13557, 914, 120.56, 4, 'sea', false);
+INSERT INTO hotelroom VALUES (13127, 914, 100.43, 3, 'sea', false);
+INSERT INTO hotelroom VALUES (13436, 914, 94.43, 2, 'sea', true);
+INSERT INTO hotelroom VALUES (13656, 914, 65.78, 1, 'sea', true);
+INSERT INTO hotelroom VALUES (13806, 914, 90.43, 3, 'sea', false);
+
+INSERT INTO hotelroom VALUES (14786, 986, 150.4, 5, 'sea', true);
+INSERT INTO hotelroom VALUES (14907, 986, 127.56, 4, 'sea', false);
+INSERT INTO hotelroom VALUES (14137, 986, 103.53, 3, 'sea', false);
+INSERT INTO hotelroom VALUES (14566, 986, 94.43, 2, 'sea', true);
+INSERT INTO hotelroom VALUES (14564, 986, 89.43, 1, 'sea', true);
+
+INSERT INTO hotelroom VALUES (15306, 954, 130.42, 5, 'mountain', false);
+INSERT INTO hotelroom VALUES (15677, 954, 115.56, 4, 'mountain', false);
+INSERT INTO hotelroom VALUES (15247, 954, 93.89, 3, 'mountain', false);
+INSERT INTO hotelroom VALUES (15777, 954, 74.43, 2, 'mountain', true);
+INSERT INTO hotelroom VALUES (15664, 954, 51.43, 1, 'mountain', true);
+
+INSERT INTO hotelroom VALUES (16126, 942, 104.42, 4, 'mountain', false);
+INSERT INTO hotelroom VALUES (16167, 942, 40.66, 1, 'mountain', false);
+INSERT INTO hotelroom VALUES (16947, 942, 93.69, 3, 'sea', false);
+INSERT INTO hotelroom VALUES (16027, 942, 64.13, 2, 'sea', true);
+INSERT INTO hotelroom VALUES (16054, 942, 120.23, 5, 'mountain', true);
+
+INSERT INTO hotelroom VALUES (17156, 902, 100.34, 1, 'mountain', false);
+INSERT INTO hotelroom VALUES (17467, 902, 120.31, 2, 'sea', false);
+INSERT INTO hotelroom VALUES (17567, 902, 140.69, 3, 'sea', false);
+INSERT INTO hotelroom VALUES (17574, 902, 160.13, 4, 'sea', true);
+INSERT INTO hotelroom VALUES (17034, 902, 180.23, 5, 'mountain', true);
+
+INSERT INTO hotelroom VALUES (18356, 939, 101.34, 2, 'sea', false);
+INSERT INTO hotelroom VALUES (18457, 939, 121.31, 3, 'sea', false);
+INSERT INTO hotelroom VALUES (18567, 939, 75.19, 1, 'sea', false);
+INSERT INTO hotelroom VALUES (18174, 939, 164.13, 4, 'sea', true);
+INSERT INTO hotelroom VALUES (18235, 939, 200.23, 5, 'mountain', true);
+
+INSERT INTO hotelroom VALUES (20356, 531, 111.34, 2, 'sea', false);
+INSERT INTO hotelroom VALUES (20457, 531, 141.31, 3, 'sea', false);
+INSERT INTO hotelroom VALUES (20567, 531, 85.19, 1, 'sea', false);
+INSERT INTO hotelroom VALUES (20174, 531, 154.13, 4, 'sea', true);
+INSERT INTO hotelroom VALUES (20235, 531, 160.23, 5, 'sea', true);
+
+INSERT INTO hotelroom VALUES (21594, 552, 90.14, 1, 'mountain', false);
+INSERT INTO hotelroom VALUES (21204, 552, 111.36, 2, 'mountain', true);
+INSERT INTO hotelroom VALUES (21690, 552, 174.19, 5, 'sea', false);
+INSERT INTO hotelroom VALUES (21103, 552, 164.13, 4, 'sea', true);
+INSERT INTO hotelroom VALUES (21068, 552, 154.23, 3, 'sea', true);
+INSERT INTO hotelroom VALUES (21061, 552, 132.54, 3, 'mountain', true);
+
+INSERT INTO hotelroom VALUES (22454, 594, 69.34, 1, 'sea', false);
+INSERT INTO hotelroom VALUES (22564, 594, 79.36, 2, 'sea', true);
+INSERT INTO hotelroom VALUES (22666, 594, 144.19, 5, 'sea', false);
+INSERT INTO hotelroom VALUES (23103, 594, 124.13, 4, 'sea', true);
+INSERT INTO hotelroom VALUES (23068, 594, 93.23, 3, 'sea', true);
+INSERT INTO hotelroom VALUES (23061, 594, 86.54, 3, 'sea', false);
+
+INSERT INTO hotelroom VALUES (23454, 581, 29.34, 1, 'sea', false);
+INSERT INTO hotelroom VALUES (23564, 581, 50.36, 2, 'sea', false);
+INSERT INTO hotelroom VALUES (23666, 581, 82.19, 5, 'sea', false);
+INSERT INTO hotelroom VALUES (23113, 581, 75.13, 4, 'sea', false);
+INSERT INTO hotelroom VALUES (23348, 581, 62.13, 3, 'sea', false);
+
+INSERT INTO hotelroom VALUES (24454, 536, 59.34, 1, 'sea', true);
+INSERT INTO hotelroom VALUES (24564, 536, 70.36, 2, 'sea', true);
+INSERT INTO hotelroom VALUES (24666, 536, 121.19, 5, 'sea', false);
+INSERT INTO hotelroom VALUES (24113, 536, 105.13, 4, 'sea', true);
+INSERT INTO hotelroom VALUES (24348, 536, 92.13, 3, 'sea', true);
+
+INSERT INTO hotelroom VALUES (25454, 542, 99.34, 4, 'mountain', true);
+INSERT INTO hotelroom VALUES (25164, 542, 93.36, 3, 'sea', false);
+INSERT INTO hotelroom VALUES (25657, 542, 125.19, 5, 'sea', false);
+INSERT INTO hotelroom VALUES (25103, 542, 65.13, 1, 'sea', false);
+INSERT INTO hotelroom VALUES (25932, 542, 52.13, 2, 'mountain', true);
+
+INSERT INTO hotelroom VALUES (26414, 512, 134.34, 5, 'mountain', true);
+INSERT INTO hotelroom VALUES (26394, 512, 53.36, 2, 'sea', false);
+INSERT INTO hotelroom VALUES (26007, 512, 165.19, 4, 'mountain', true);
+INSERT INTO hotelroom VALUES (26343, 512, 68.13, 3, 'sea', false);
+INSERT INTO hotelroom VALUES (26782, 512, 42.13, 1, 'mountain', true);
+
+INSERT INTO hotelroom VALUES (27414, 546, 64.34, 5, 'sea', false);
+INSERT INTO hotelroom VALUES (27394, 546, 33.36, 2, 'sea', false);
+INSERT INTO hotelroom VALUES (27007, 546, 50.19, 4, 'sea', false);
+INSERT INTO hotelroom VALUES (27343, 546, 48.13, 3, 'sea', false);
+INSERT INTO hotelroom VALUES (27782, 546, 22.13, 1, 'sea', false);
+
+INSERT INTO hotelroom VALUES (30376, 211, 131.54, 2, 'sea', true);
+INSERT INTO hotelroom VALUES (30787, 211, 165.31, 3, 'mountain', true);
+INSERT INTO hotelroom VALUES (30857, 211, 100.19, 1, 'sea', true);
+INSERT INTO hotelroom VALUES (30964, 211, 194.16, 4, 'mountain', true);
+INSERT INTO hotelroom VALUES (30995, 211, 220.13, 5, 'sea', true);
+
+INSERT INTO hotelroom VALUES (31366, 234, 131.54, 1, 'mountain', true);
+INSERT INTO hotelroom VALUES (31787, 234, 165.31, 2, 'mountain', true);
+INSERT INTO hotelroom VALUES (31990, 234, 100.19, 3, 'mountain', true);
+INSERT INTO hotelroom VALUES (31924, 234, 194.16, 4, 'mountain', true);
+INSERT INTO hotelroom VALUES (31678, 234, 220.13, 5, 'mountain', true);
+
+INSERT INTO hotelroom VALUES (32009, 262, 71.50, 1, 'mountain', true);
+INSERT INTO hotelroom VALUES (32434, 262, 85.11, 2, 'mountain', true);
+INSERT INTO hotelroom VALUES (32656, 262, 90.19, 3, 'mountain', true);
+INSERT INTO hotelroom VALUES (32932, 262, 104.10, 4, 'mountain', false);
+INSERT INTO hotelroom VALUES (32983, 262, 115.33, 5, 'mountain', false);
+
+INSERT INTO hotelroom VALUES (33202, 273, 31.50, 1, 'mountain', true);
+INSERT INTO hotelroom VALUES (33100, 273, 42.11, 2, 'mountain', true);
+INSERT INTO hotelroom VALUES (33435, 273, 65.19, 3, 'mountain', true);
+INSERT INTO hotelroom VALUES (33359, 273, 76.10, 4, 'mountain', true);
+INSERT INTO hotelroom VALUES (33303, 273, 85.33, 5, 'mountain', false);
+
+INSERT INTO hotelroom VALUES (34002, 219, 11.50, 1, 'mountain', false);
+INSERT INTO hotelroom VALUES (34560, 219, 22.11, 2, 'mountain', false);
+INSERT INTO hotelroom VALUES (34245, 219, 35.19, 3, 'mountain', false);
+INSERT INTO hotelroom VALUES (34309, 219, 46.10, 4, 'mountain', false);
+INSERT INTO hotelroom VALUES (34323, 219, 55.33, 5, 'mountain', false);
+
+INSERT INTO hotelroom VALUES (35452, 206, 51.50, 1, 'mountain', true);
+INSERT INTO hotelroom VALUES (35550, 206, 62.11, 2, 'mountain', true);
+INSERT INTO hotelroom VALUES (35059, 206, 95.19, 5, 'mountain', true);
+INSERT INTO hotelroom VALUES (35045, 206, 66.10, 3, 'mountain', true);
+INSERT INTO hotelroom VALUES (35000, 206, 75.33, 4, 'mountain', true);
+
+INSERT INTO hotelroom VALUES (36452, 291, 79.50, 4, 'mountain', true);
+INSERT INTO hotelroom VALUES (36550, 291, 50.11, 2, 'mountain', false);
+INSERT INTO hotelroom VALUES (36059, 291, 90.19, 5, 'mountain', true);
+INSERT INTO hotelroom VALUES (36045, 291, 64.10, 3, 'mountain', false);
+INSERT INTO hotelroom VALUES (36000, 291, 70.33, 4, 'mountain', false);
+INSERT INTO hotelroom VALUES (36053, 291, 96.10, 6, 'mountain', false);
+INSERT INTO hotelroom VALUES (36003, 291, 74.33, 4, 'mountain', false);
+
+INSERT INTO hotelroom VALUES (37452, 224, 79.50, 4, 'mountain', true);
+INSERT INTO hotelroom VALUES (37550, 224, 50.11, 2, 'mountain', false);
+INSERT INTO hotelroom VALUES (37059, 224, 90.19, 5, 'mountain', true);
+INSERT INTO hotelroom VALUES (37045, 224, 64.10, 3, 'mountain', false);
+INSERT INTO hotelroom VALUES (37000, 224, 70.33, 4, 'mountain', false);
+
+INSERT INTO hotelroom VALUES (38452, 241, 49.50, 1, 'mountain', true);
+INSERT INTO hotelroom VALUES (38770, 241, 57.11, 2, 'mountain', false);
+INSERT INTO hotelroom VALUES (38649, 241, 80.19, 5, 'mountain', false);
+INSERT INTO hotelroom VALUES (38235, 241, 61.10, 3, 'mountain', false);
+INSERT INTO hotelroom VALUES (38043, 241, 76.33, 4, 'mountain', false);
 
 -- Customers 
 INSERT INTO customer VALUES (929002842, 'Justin Wang', '75 Tambrook Blvd', '2023-03-15');
@@ -221,6 +372,11 @@ SELECT hotelbranch.branchAddress, SUM(hotelroom.roomCapacity) AS totalRooms
 FROM hotelbranch
 INNER JOIN hotelroom ON hotelbranch.branchID = hotelroom.branchID
 GROUP BY hotelbranch.branchAddress;
+
+CREATE VIEW CapacityView AS 
+SELECT hotelchain.hotelname, hotelbranch.branchid, hotelroom.roomid, hotelroom.roomcapacity 
+FROM hotelbranch INNER JOIN hotelroom ON hotelbranch.branchID = hotelroom.branchID INNER JOIN hotelchain ON hotelchain.hotelid = hotelbranch.hotelid 
+WHERE hotelbranch.branchid = 911;
 
 --Indexes
 CREATE INDEX hotelbranch_starRating ON hotelbranch (starrating);
