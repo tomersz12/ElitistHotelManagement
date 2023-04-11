@@ -27,6 +27,7 @@
 				<TH>Room Capacity</TH>
 				<TH>View Type</TH>
 				<TH>Can I Extend My Stay?</TH>
+				<TH>Amentities</TH>
 				<TH></TH>
 			</TR>
 			<%Object test1 = request.getAttribute("chosenCity"); %>
@@ -49,6 +50,7 @@
 				<TD><%= resultset.getString(7) %></TD>
 				<TD><%= resultset.getString(8) %></TD>
 				<TD><%= resultset.getString(9) %></TD>
+				<TD><%= resultset.getString(10) %></TD>
 				<TD><form action="${pageContext.request.contextPath}/MyServlet" method="post">
 				<input type="submit" name="Button" class="bookButton" value="Book Now!"> 
 				<input type="hidden" name="roomData" value=<%=resultset.getString(5)%>>

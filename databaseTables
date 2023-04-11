@@ -352,6 +352,252 @@ INSERT INTO customer VALUES (123456789, 'Tomer Szulsztien', '210 Waterhouse Driv
 INSERT INTO employee VALUES (987654321, 'Tomer Justin', '800 King Edward Ave', 911, false);
 INSERT INTO employee VALUES (123123123, 'Manager Man', '12 Manager Road', 911, true);
 
+--chain phonenumber
+INSERT INTO chainphonenumbers (chainphonenumberid, hotelid, chainphonenumber)
+VALUES (101, 1234, '613-555-1234');
+INSERT INTO chainphonenumbers (chainphonenumberid, hotelid, chainphonenumber)
+VALUES (102, 5432, '514-555-1234');
+INSERT INTO chainphonenumbers (chainphonenumberid, hotelid, chainphonenumber)
+VALUES (103, 7431, '604-555-1234');
+
+--chain email
+-- Marriott
+INSERT INTO chainemails VALUES (1, 1234, 'marriottinfo@marriott.com');
+INSERT INTO chainemails VALUES (2, 1234, 'marriottcustomerservice@marriott.com');
+
+-- Hilton
+INSERT INTO chainemails VALUES (3, 5432, 'hiltoninfo@hilton.com');
+INSERT INTO chainemails VALUES (4, 5432, 'hiltoncustomerservice@hilton.com');
+
+-- AirBnB
+INSERT INTO chainemails VALUES (5, 7431, 'airbnbinfo@airbnb.com');
+INSERT INTO chainemails VALUES (6, 7431, 'airbnbcustomerservice@airbnb.com');
+
+-- Tomer Lodges
+INSERT INTO chainemails VALUES (7, 9845, 'tomerlodgesinfo@tomerlodges.com');
+INSERT INTO chainemails VALUES (8, 9845, 'tomerlodgescustomerservice@tomerlodges.com');
+
+-- Wang Resorts
+INSERT INTO chainemails VALUES (9, 5498, 'wangresortsinfo@wangresorts.com');
+INSERT INTO chainemails VALUES (10, 5498, 'wangresortscustomerservice@wangresorts.com');
+
+-- branchemails
+-- Marriott
+INSERT INTO branchemails (branchemailid, branchid, branchemailaddress) 
+VALUES (1, 911, 'ottawa1@marriott.com');
+INSERT INTO branchemails (branchemailid, branchid, branchemailaddress) 
+VALUES (2, 962, 'ottawa2@marriott.com');
+INSERT INTO branchemails (branchemailid, branchid, branchemailaddress) 
+VALUES (3, 914, 'toronto1@marriott.com');
+INSERT INTO branchemails (branchemailid, branchid, branchemailaddress) 
+VALUES (4, 986, 'toronto2@marriott.com');
+INSERT INTO branchemails (branchemailid, branchid, branchemailaddress) 
+VALUES (5, 954, 'kitchner1@marriott.com');
+INSERT INTO branchemails (branchemailid, branchid, branchemailaddress) 
+VALUES (6, 942, 'london1@marriott.com');
+INSERT INTO branchemails (branchemailid, branchid, branchemailaddress) 
+VALUES (7, 902, 'hamilton1@marriott.com');
+INSERT INTO branchemails (branchemailid, branchid, branchemailaddress) 
+VALUES (8, 939, 'kingston1@marriott.com');
+
+-- Hilton
+INSERT INTO branchemails (branchemailid, branchid, branchemailaddress) VALUES (11, 531, 'montreal@hilton.com');
+INSERT INTO branchemails (branchemailid, branchid, branchemailaddress) VALUES (12, 552, 'montreal2@hilton.com');
+INSERT INTO branchemails (branchemailid, branchid, branchemailaddress) VALUES (13, 594, 'toronto@hilton.com');
+INSERT INTO branchemails (branchemailid, branchid, branchemailaddress) VALUES (14, 581, 'ottawa@hilton.com');
+INSERT INTO branchemails (branchemailid, branchid, branchemailaddress) VALUES (15, 536, 'charlottetown@hilton.com');
+INSERT INTO branchemails (branchemailid, branchid, branchemailaddress) VALUES (16, 542, 'halifax@hilton.com');
+INSERT INTO branchemails (branchemailid, branchid, branchemailaddress) VALUES (17, 512, 'quebec-city@hilton.com');
+INSERT INTO branchemails (branchemailid, branchid, branchemailaddress) VALUES (18, 546, 'st-johns@hilton.com');
+
+--airbnb
+INSERT INTO branchemails (branchemailid, branchid, branchemailaddress)
+VALUES (111, 211, 'vancouver@airbnb.com'),
+       (112, 234, 'victoria@airbnb.com'),
+       (113, 262, 'edmonton1@airbnb.com'),
+       (114, 273, 'edmonton2@airbnb.com'),
+       (115, 219, 'calgary@airbnb.com'),
+       (116, 206, 'regina@airbnb.com'),
+       (117, 291, 'winnipeg@airbnb.com'),
+       (118, 224, 'saskatoon@airbnb.com'),
+       (119, 241, 'nanaimo@airbnb.com');
+
+--branch phonenumbers
+--Marriott Branches:
+INSERT INTO branchphonenumbers (branchphonenumberid, branchid, branchphonenumber)
+VALUES (1, 911, '613-555-1234'),
+(2, 962, '613-555-5678'),
+(3, 914, '416-555-1234'),
+(4, 986, '416-555-5678'),
+(5, 954, '519-555-1234'),
+(6, 942, '519-555-5678'),
+(7, 902, '905-555-1234'),
+(8, 939, '613-555-9012');
+
+--Hilton Branches:
+INSERT INTO branchphonenumbers (branchphonenumberid, branchid, branchphonenumber)
+VALUES (10, 531, '514-555-1234'),
+(11, 552, '514-555-5678'),
+(12, 594, '416-555-1234'),
+(13, 581, '613-555-1234'),
+(14, 536, '902-555-1234'),
+(15, 542, '902-555-5678'),
+(16, 512, '418-555-1234'),
+(17, 546, '709-555-1234');
+
+--AirBnB Branches:
+INSERT INTO branchphonenumbers (branchphonenumberid,branchid, branchphonenumber)
+VALUES (20, 211, '604-555-1234'),
+(21, 234, '250-555-1234'),
+(22, 262, '780-555-1234'),
+(23, 273, '780-555-5678'),
+(24, 219, '403-555-1234'),
+(25, 206, '306-555-1234'),
+(26, 291, '204-555-1234'),
+(27, 224, '306-555-5678'),
+(28, 241, '250-555-5678');
+
+
+--amentities
+INSERT INTO amentities VALUES (123456, 12345, 'TV, fridge');
+INSERT INTO amentities VALUES (234567, 12536, 'air condition');
+INSERT INTO amentities VALUES (345678, 12466, 'TV');
+INSERT INTO amentities VALUES (456789, 12136, 'fridge');
+INSERT INTO amentities VALUES (567890, 12790, 'TV, air condition, fridge'); 
+INSERT INTO amentities (amentitieid, roomid, amentities)
+VALUES
+    (123451, 11145, 'TV, air condition'),
+    (234561, 11145, 'fridge'),
+    (345671, 11375, 'TV, fridge'),
+    (456782, 11348, 'air condition'),
+    (567894, 11360, 'TV, air condition, fridge'),
+    (678901, 11995, 'fridge'),
+    (789012, 11975, 'TV, air condition'),
+    (890123, 11545, 'TV, fridge');
+INSERT INTO amentities VALUES (123456, 13456, 'TV, air condition');
+INSERT INTO amentities VALUES (234567, 13456, 'fridge');
+INSERT INTO amentities VALUES (345673, 13557, 'TV');
+INSERT INTO amentities VALUES (416789, 13127, 'air condition, fridge');
+INSERT INTO amentities VALUES (561890, 13436, 'TV');
+INSERT INTO amentities VALUES (674501, 13656, 'air condition');
+INSERT INTO amentities VALUES (786012, 13806, 'TV, fridge');
+INSERT INTO amentities VALUES (436789, 14786, 'TV, air condition');
+INSERT INTO amentities VALUES (234547, 14907, 'fridge');
+INSERT INTO amentities VALUES (782395, 14137, 'TV, air condition, fridge');
+INSERT INTO amentities VALUES (345628, 14566, 'TV');
+INSERT INTO amentities VALUES (890121, 14564, 'air condition');
+INSERT INTO amentities VALUES (576823, 15306, 'TV, fridge');
+INSERT INTO amentities VALUES (456987, 15677, 'air condition');
+INSERT INTO amentities VALUES (298743, 15247, 'fridge');
+INSERT INTO amentities VALUES (687231, 15777, 'TV, air condition, fridge');
+INSERT INTO amentities VALUES (123450, 15664, 'TV');
+INSERT INTO amentities VALUES (726945, 16126, 'TV, air condition');
+INSERT INTO amentities VALUES (837195, 16167, 'fridge');
+INSERT INTO amentities VALUES (745239, 16947, 'TV');
+INSERT INTO amentities VALUES (632194, 16027, 'TV, fridge');
+INSERT INTO amentities VALUES (432198, 16054, 'air condition, fridge');
+INSERT INTO amentities VALUES (214523, 17156, 'TV, air condition');
+INSERT INTO amentities VALUES (214524, 17467, 'fridge');
+INSERT INTO amentities VALUES (214525, 17567, 'TV, air condition, fridge');
+INSERT INTO amentities VALUES (214526, 17574, 'TV, air condition');
+INSERT INTO amentities VALUES (214527, 17034, 'air condition');
+INSERT INTO amentities VALUES (587209, 18356, 'TV, air condition');
+INSERT INTO amentities VALUES (675891, 18457, 'fridge');
+INSERT INTO amentities VALUES (327516, 18567, 'air condition');
+INSERT INTO amentities VALUES (895431, 18174, 'TV, fridge');
+INSERT INTO amentities VALUES (246538, 18235, 'TV, air condition, fridge');
+
+INSERT INTO amentities VALUES (726824, 20356, 'TV, fridge');
+INSERT INTO amentities VALUES (104283, 20457, 'air condition');
+INSERT INTO amentities VALUES (600758, 20567, 'TV, fridge');
+INSERT INTO amentities VALUES (912345, 20174, 'air condition, fridge');
+INSERT INTO amentities VALUES (236187, 20235, 'TV');
+INSERT INTO amentities VALUES (581439, 21594, 'TV, fridge');
+INSERT INTO amentities VALUES (386219, 21204, 'TV, air condition');
+INSERT INTO amentities VALUES (623718, 21690, 'fridge');
+INSERT INTO amentities VALUES (748971, 21103, 'TV, air condition, fridge');
+INSERT INTO amentities VALUES (248397, 21068, 'air condition');
+INSERT INTO amentities VALUES (162305, 21061, 'TV');
+INSERT INTO amentities VALUES (327905, 22454, 'TV, fridge');
+INSERT INTO amentities VALUES (682373, 22564, 'TV, air condition, fridge');
+INSERT INTO amentities VALUES (128790, 22666, 'TV, fridge');
+INSERT INTO amentities VALUES (973522, 23103, 'air condition, fridge');
+INSERT INTO amentities VALUES (273044, 23068, 'TV, fridge');
+INSERT INTO amentities VALUES (891361, 23061, 'TV');
+INSERT INTO amentities VALUES (473928, 23454, 'TV');
+INSERT INTO amentities VALUES (483820, 23564, 'fridge');
+INSERT INTO amentities VALUES (491270, 23666, 'air condition', 'TV');
+INSERT INTO amentities VALUES (487202, 23113, 'fridge', 'air condition');
+INSERT INTO amentities VALUES (478301, 23348, 'air condition');
+INSERT INTO amentities VALUES (123344, 24454, 'TV, air condition');
+INSERT INTO amentities VALUES (234545, 24564, 'TV, air condition');
+INSERT INTO amentities VALUES (345672, 24666, 'fridge');
+INSERT INTO amentities VALUES (456703, 24113, 'TV, fridge');
+INSERT INTO amentities VALUES (567890, 24348, 'TV');
+INSERT INTO amentities VALUES (334556, 25454, 'TV, air condition');
+INSERT INTO amentities VALUES (234356, 25164, 'fridge');
+INSERT INTO amentities VALUES (345670, 25657, 'TV');
+INSERT INTO amentities VALUES (456702, 25103, 'air condition');
+INSERT INTO amentities VALUES (567893, 25932, 'TV, fridge');
+INSERT INTO amentities VALUES (234523, 26414, 'TV, fridge');
+INSERT INTO amentities VALUES (345679, 26394, 'air condition');
+INSERT INTO amentities VALUES (456701, 26007, 'TV, fridge, air condition');
+INSERT INTO amentities VALUES (567190, 26343, 'TV');
+INSERT INTO amentities VALUES (678901, 26782, 'fridge');
+INSERT INTO amentities VALUES (986541, 27414, 'TV, air condition');
+INSERT INTO amentities VALUES (128765, 27394, 'fridge');
+INSERT INTO amentities VALUES (786354, 27007, 'air condition, fridge');
+INSERT INTO amentities VALUES (375649, 27343, 'TV');
+INSERT INTO amentities VALUES (654931, 27782, 'fridge');
+
+INSERT INTO amentities VALUES (130982, 30376, 'TV, air condition, fridge');
+INSERT INTO amentities VALUES (142764, 30787, 'air condition');
+INSERT INTO amentities VALUES (136508, 30857, 'TV, fridge');
+INSERT INTO amentities VALUES (154337, 30964, 'TV, air condition');
+INSERT INTO amentities VALUES (147196, 30995, 'TV, air condition, fridge');
+INSERT INTO amentities VALUES (186215, 31366, 'TV, air condition, fridge');
+INSERT INTO amentities VALUES (987623, 31787, 'air condition');
+INSERT INTO amentities VALUES (436781, 31990, 'fridge');
+INSERT INTO amentities VALUES (648579, 31924, 'TV, fridge');
+INSERT INTO amentities VALUES (901238, 31678, 'TV, air condition');
+INSERT INTO amentities VALUES (731247, 32009, 'TV, air condition');
+INSERT INTO amentities VALUES (837615, 32434, 'fridge');
+INSERT INTO amentities VALUES (947289, 32656, 'TV');
+INSERT INTO amentities VALUES (104706, 32932, 'air condition');
+INSERT INTO amentities VALUES (119107, 32983, 'fridge, air condition');
+INSERT INTO amentities VALUES (912354, 33202, 'TV, air condition');
+INSERT INTO amentities VALUES (632104, 33100, 'fridge');
+INSERT INTO amentities VALUES (835298, 33435, 'TV');
+INSERT INTO amentities VALUES (554110, 33359, 'air condition');
+INSERT INTO amentities VALUES (789345, 33303, 'TV, air condition, fridge');
+INSERT INTO amentities VALUES (680471, 34002, 'TV, fridge');
+INSERT INTO amentities VALUES (684538, 34560, 'air condition');
+INSERT INTO amentities VALUES (682219, 34245, 'TV');
+INSERT INTO amentities VALUES (682845, 34309, 'fridge');
+INSERT INTO amentities VALUES (682053, 34323, 'TV, air condition');
+INSERT INTO amentities VALUES (654321, 35452, 'TV, fridge');
+INSERT INTO amentities VALUES (987654, 35550, 'air condition, TV');
+INSERT INTO amentities VALUES (234556, 35045, 'TV'); 
+INSERT INTO amentities VALUES (2355597, 35000, 'fridge, air condition'); 
+INSERT INTO amentities VALUES (344558, 35059, 'air condition, fridge');
+INSERT INTO amentities VALUES (578321, 36452, 'TV, air condition');
+INSERT INTO amentities VALUES (942706, 36550, 'fridge');
+INSERT INTO amentities VALUES (833201, 36059, 'TV, air condition, fridge');
+INSERT INTO amentities VALUES (479836, 36045, 'fridge');
+INSERT INTO amentities VALUES (174905, 36000, 'TV');
+INSERT INTO amentities VALUES (961237, 36053, 'air condition');
+INSERT INTO amentities VALUES (359014, 36003, 'TV, fridge');
+INSERT INTO amentities VALUES (111111, 37452, 'TV, air condition');
+INSERT INTO amentities VALUES (222222, 37550, 'fridge');
+INSERT INTO amentities VALUES (333333, 37059, 'TV, fridge');
+INSERT INTO amentities VALUES (444444, 37045, 'air condition');
+INSERT INTO amentities VALUES (555555, 37000, 'TV');
+INSERT INTO amentities VALUES (231457, 38452, 'TV, fridge');
+INSERT INTO amentities VALUES (987654, 38770, 'air condition');
+INSERT INTO amentities VALUES (940456, 38649, 'TV, air condition, fridge');
+INSERT INTO amentities VALUES (493940, 38235, 'air condition, fridge');
+INSERT INTO amentities VALUES (893498, 38043, 'TV, fridge');
+
 -- Trigger
 CREATE OR REPLACE FUNCTION changeNameOfBooking()
 RETURNS TRIGGER AS $$
