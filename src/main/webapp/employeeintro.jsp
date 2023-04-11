@@ -13,7 +13,7 @@
 	<%Object sin = request.getAttribute("employeeSin");%>
 	<%ResultSet employeeset = ContactProgram.showEmployeeProfile(sin); %>
 	<% employeeset.next(); %>
-	<h1><%= "Signed in as: " + employeeset.getString(2) %></h1>
+	<h1><%= "Signed in as: " + employeeset.getString(2) +" at Branch " + employeeset.getString(4) %></h1>
 	<% boolean isManager = "t".equals(employeeset.getString(5)); %>
 	
 	<h3>List of Bookings</h3>
@@ -52,6 +52,7 @@
 					<input type="submit" name="Button" class="beginRentingButton" value="Begin Rental">
 					<input type="hidden" name="employeeSIN" value=<%=employeeset.getString(1)%>> 
 					<input type="hidden" name="bookingID" value=<%=bookingset.getString(1)%>>
+					<input type="hidden" name="checkedIn" value=<%=bookingset.getString(7)%>>
 					</form>
 				</TD>
 			</TR>
@@ -101,7 +102,7 @@
 	</div>
 	
 	<h3>Create Rental</h3>
-	<div class = "createRentalForm">
+	<div class = "form">
 			<form action="${pageContext.request.contextPath}/MyServlet" method="POST">
 				<input type = "text" name="sinNumber" placeholder="Customer SIN" >
 				<br></br>
@@ -114,7 +115,7 @@
 			</form>
 	</div>
 	
-	
+	<% //Management Tools are below %>
 	
 	<div>
 	<% if (isManager) { %>
@@ -146,10 +147,38 @@
 	</div>
 	<% } %>
 	
-	<h3>Create Employee Will Go Here</h3>
+	<h3>Create Employee Account</h3>
+	<div class = "form">
+			<form action="${pageContext.request.contextPath}/MyServlet" method="POST">
+				<input type = "text" name="fullName" placeholder="Employee Name" >
+				<br></br>
+				<input type = "text" name="address" placeholder="Employee Address">
+				<br></br>
+				<input type="submit" name="Button" class="createEmployeeButton" value="Create Employee">
+				<input type="hidden" name="employeeSIN" value=<%=employeeset.getString(1)%>> 
+				<input type="hidden" name="branchID" value=<%=employeeset.getString(4)%>> 
+			</form>
+	</div>
 	
-	<h3>Create Room Will Go Here</h3>
-	
+	<h3>Create Room</h3>
+	<div class = "form">
+			<form action="${pageContext.request.contextPath}/MyServlet" method="POST">
+				<input type = "text" name="roomID" placeholder="Room ID" >
+				<br></br>
+				<input type = "text" name="price" placeholder="Price">
+				<br></br>
+				<input type = "number" name="roomCapacity" placeholder="Room Capacity">
+				<br></br>
+				<input type = "text" name="typeOfView" placeholder="Type of View">
+				<br></br>
+				<input type="checkbox" name="extendability">
+				<label for="extendability"> Extendable? </label>
+				<br></br>
+				<input type="submit" name="Button" class="createRoomButton" value="Create Room">
+				<input type="hidden" name="employeeSIN" value=<%=employeeset.getString(1)%>> 
+				<input type="hidden" name="branchID" value=<%=employeeset.getString(4)%>> 
+			</form>
+	</div>
 	
 	</div>
 	

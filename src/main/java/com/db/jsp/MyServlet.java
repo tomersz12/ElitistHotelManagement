@@ -93,6 +93,44 @@ public class MyServlet extends HttpServlet{
 			request.setAttribute("employeeSin", employeeSIN);
 			request.getRequestDispatcher("/employeeintro.jsp").forward(request, response);
 			
+		}else if ("Create Employee".equals(button)) {
+			String employeeName = request.getParameter("fullName");
+			String employeeAddress = request.getParameter("address");
+			String branchID = request.getParameter("branchID");
+			String employeeSIN = request.getParameter("employeeSIN");
+
+			try {
+				ContactProgram.createEmployee(employeeName, employeeAddress, Integer.parseInt(branchID));
+			} catch (SQLException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+			request.setAttribute("employeeSin", employeeSIN);
+			request.getRequestDispatcher("/employeeintro.jsp").forward(request, response);
+			
+		}else if ("Create Room".equals(button)) {
+			String roomID = request.getParameter("roomID");
+			String branchID = request.getParameter("branchID");
+			String price = request.getParameter("price");
+			String roomCapacity = request.getParameter("roomCapacity");
+			String typeOfView = request.getParameter("typeOfView");
+			
+			boolean extendability = false;
+			if (request.getParameter("extendability") != null) {
+				extendability = true;
+			}
+
+			String employeeSIN = request.getParameter("employeeSIN");
+
+			try {
+				ContactProgram.createRoom(Integer.parseInt(roomID), Integer.parseInt(branchID), price, Integer.parseInt(roomCapacity), typeOfView, extendability);
+			} catch (SQLException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+			request.setAttribute("employeeSin", employeeSIN);
+			request.getRequestDispatcher("/employeeintro.jsp").forward(request, response);
+			
 		}else if ("Book Now!".equals(button)) {
 			String chosenRoomID = request.getParameter("roomData");
 			String chosenSIN = request.getParameter("userSinFinal");
@@ -119,9 +157,10 @@ public class MyServlet extends HttpServlet{
 		}else if ("Begin Rental".equals(button)) {
 			String bookingID = request.getParameter("bookingID");
 			String employeeSIN = request.getParameter("employeeSIN");
+			String checkedIn = request.getParameter("checkedIn");
 			
 			try {
-				ContactProgram.startRental(Integer.parseInt(bookingID), Integer.parseInt(employeeSIN));
+				ContactProgram.startRental(Integer.parseInt(bookingID), Integer.parseInt(employeeSIN), checkedIn);
 			} catch (SQLException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();

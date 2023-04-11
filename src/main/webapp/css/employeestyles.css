@@ -13,3 +13,8 @@ h3 {
 	width: 100px;
 	height: 86px;
 }
+
+.form {
+	display:flex;
+  	justify-content: center;
+}

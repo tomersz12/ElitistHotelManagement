@@ -272,48 +272,49 @@ public class ContactProgram {
     }
     
   //booking -> rental
-    public static void startRental(int bookingID, int employeeSIN) throws SQLException{
-    	Connection connection = DriverManager.getConnection(jdbcURL, username, password);
-    	Random rand = new Random();
-    	int randomRentalID = rand.nextInt(89999) + 10000;
-    	
-    	int sin = 0;
-    	int roomID = 0;
-    	String nameOfResident = null;
-    	String start = null;
-    	String end = null;
-    	
-    	String getBooking = "SELECT * FROM booking WHERE bookingID=" + bookingID;
-    	Statement statement = connection.createStatement();
-        ResultSet result = statement.executeQuery(getBooking);
-        while(result.next()) {
-        	sin = result.getInt(2);
-        	roomID = result.getInt(3);
-        	nameOfResident = result.getString(4);
-        	start = result.getString(5);
-        	end = result.getString(6);
-        }
-
-    	
-    	String sql = "INSERT INTO rental VALUES (?, ?, ?, ?, ?, ?, ?, ?, true, false )";
-    	PreparedStatement insert = connection.prepareStatement(sql);
-    	
-    	insert.setInt(1, randomRentalID);
-    	insert.setInt(2, bookingID);
-    	insert.setInt(3, sin);
-    	insert.setInt(4, employeeSIN);
-    	insert.setInt(5, roomID);
-    	insert.setString(6, nameOfResident);
-    	insert.setDate(7, java.sql.Date.valueOf(start));
-    	insert.setDate(8, java.sql.Date.valueOf(end));
-    	
-    	insert.executeUpdate();
-    	
-    	sql = "UPDATE Booking SET checkIn = true WHERE BookingID="+bookingID;
-    	PreparedStatement bookingUpdate = connection.prepareStatement(sql);
-    	
-    	bookingUpdate.executeUpdate();
-        connection.close();
+    public static void startRental(int bookingID, int employeeSIN, String checkedIn) throws SQLException{
+    	if (checkedIn.equals("f")) {
+	    	Connection connection = DriverManager.getConnection(jdbcURL, username, password);
+	    	Random rand = new Random();
+	    	int randomRentalID = rand.nextInt(89999) + 10000;
+	    	
+	    	int sin = 0;
+	    	int roomID = 0;
+	    	String nameOfResident = null;
+	    	String start = null;
+	    	String end = null;
+	    	
+	    	String getBooking = "SELECT * FROM booking WHERE bookingID=" + bookingID;
+	    	Statement statement = connection.createStatement();
+	        ResultSet result = statement.executeQuery(getBooking);
+	        while(result.next()) {
+	        	sin = result.getInt(2);
+	        	roomID = result.getInt(3);
+	        	nameOfResident = result.getString(4);
+	        	start = result.getString(5);
+	        	end = result.getString(6);
+	        }
+	    	
+	    	String sql = "INSERT INTO rental VALUES (?, ?, ?, ?, ?, ?, ?, ?, true, false )";
+	    	PreparedStatement insert = connection.prepareStatement(sql);
+	    	
+	    	insert.setInt(1, randomRentalID);
+	    	insert.setInt(2, bookingID);
+	    	insert.setInt(3, sin);
+	    	insert.setInt(4, employeeSIN);
+	    	insert.setInt(5, roomID);
+	    	insert.setString(6, nameOfResident);
+	    	insert.setDate(7, java.sql.Date.valueOf(start));
+	    	insert.setDate(8, java.sql.Date.valueOf(end));
+	    	
+	    	insert.executeUpdate();
+	    	
+	    	sql = "UPDATE Booking SET checkIn = true WHERE BookingID="+bookingID;
+	    	PreparedStatement bookingUpdate = connection.prepareStatement(sql);
+	    	
+	    	bookingUpdate.executeUpdate();
+	        connection.close();
+    	}
     }
     
     //create rental
@@ -355,6 +356,43 @@ public class ContactProgram {
     	PreparedStatement delete = connection.prepareStatement(sql);
     	
     	delete.executeUpdate();
+        connection.close();
+    }
+    
+    public static void createEmployee(String name, String address, int branchID) throws SQLException{
+    	Connection connection = DriverManager.getConnection(jdbcURL, username, password);
+    	
+    	Random rand = new Random();
+    	int employeeSIN = rand.nextInt(899999999) + 100000000;
+    	
+    	String sql = "INSERT INTO employee VALUES (?, ?, ?, ?, false)";
+    	PreparedStatement insert = connection.prepareStatement(sql);
+    	
+    	insert.setInt(1, employeeSIN);
+    	insert.setString(2, name);
+    	insert.setString(3, address);
+    	insert.setInt(4, branchID);
+    	
+    	insert.executeUpdate();
+        connection.close();
+    }
+    
+    public static void createRoom(int roomID, int branchID, String price, int capacity, String view, boolean extendable) throws SQLException{
+    	Connection connection = DriverManager.getConnection(jdbcURL, username, password);
+    	
+    	String sql = "INSERT INTO hotelroom VALUES (?, ?, ?, ?, ?, ?)";
+    	PreparedStatement insert = connection.prepareStatement(sql);
+    	
+    	insert.setInt(1, roomID);
+    	insert.setInt(2, branchID);
+    	insert.setDouble(3, Double.parseDouble(price));
+    	insert.setInt(4, capacity);
+    	insert.setString(5, view);
+    	insert.setBoolean(6, extendable);
+    	
+    	System.out.println("Creating Room");
+    	
+    	insert.executeUpdate();
         connection.close();
     }
     
