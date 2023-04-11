@@ -344,9 +344,126 @@ INSERT INTO hotelroom VALUES (38649, 241, 80.19, 5, 'mountain', false);
 INSERT INTO hotelroom VALUES (38235, 241, 61.10, 3, 'mountain', false);
 INSERT INTO hotelroom VALUES (38043, 241, 76.33, 4, 'mountain', false);
 
+INSERT INTO HotelRoom VALUES (24569, 714, 125.50, 2, 'sea', true);
+INSERT INTO HotelRoom VALUES (39015, 714, 89.99, 4, 'mountain', false);
+INSERT INTO HotelRoom VALUES (57693, 714, 220.00, 3, 'city', true);
+INSERT INTO HotelRoom VALUES (81325, 714, 175.75, 5, 'sea', false);
+INSERT INTO HotelRoom VALUES (92475, 714, 300.25, 6, 'mountain', true);
+
+INSERT INTO HotelRoom VALUES (12846, 732, 150.25, 3, 'sea', true);
+INSERT INTO HotelRoom VALUES (23541, 732, 75.50, 2, 'city', false);
+INSERT INTO HotelRoom VALUES (35269, 732, 225.00, 4, 'mountain', true);
+INSERT INTO HotelRoom VALUES (45783, 732, 100.75, 1, 'city', false);
+INSERT INTO HotelRoom VALUES (56492, 732, 300.50, 6, 'sea', true);
+
+INSERT INTO HotelRoom VALUES (14832, 792, 200.50, 4, 'sea', true);
+INSERT INTO HotelRoom VALUES (25691, 792, 90.99, 2, 'city', false);
+INSERT INTO HotelRoom VALUES (37564, 792, 180.00, 3, 'mountain', true);
+INSERT INTO HotelRoom VALUES (45784, 792, 120.75, 1, 'city', false);
+INSERT INTO HotelRoom VALUES (56493, 792, 300.50, 6, 'sea', true);
+INSERT INTO HotelRoom VALUES (64325, 792, 150.25, 3, 'mountain', false);
+INSERT INTO HotelRoom VALUES (78543, 792, 350.00, 5, 'city', true);
+
+INSERT INTO HotelRoom VALUES (15297, 708, 150.50, 3, 'sea', true);
+INSERT INTO HotelRoom VALUES (26853, 708, 80.99, 2, 'city', false);
+INSERT INTO HotelRoom VALUES (37954, 708, 200.00, 4, 'mountain', true);
+INSERT INTO HotelRoom VALUES (46975, 708, 110.75, 1, 'city', false);
+INSERT INTO HotelRoom VALUES (57246, 708, 250.50, 6, 'sea', true);
+INSERT INTO HotelRoom VALUES (64125, 708, 130.25, 3, 'mountain', false);
+
+INSERT INTO HotelRoom VALUES (13487, 719, 140.75, 2, 'sea', true);
+INSERT INTO HotelRoom VALUES (24689, 719, 95.50, 4, 'mountain', false);
+INSERT INTO HotelRoom VALUES (36547, 719, 210.00, 3, 'city', true);
+INSERT INTO HotelRoom VALUES (47825, 719, 160.25, 5, 'sea', false);
+INSERT INTO HotelRoom VALUES (58964, 719, 280.50, 6, 'mountain', true);
+
+INSERT INTO HotelRoom VALUES (14275, 706, 120.50, 2, 'sea', true);
+INSERT INTO HotelRoom VALUES (25763, 706, 85.99, 4, 'mountain', false);
+INSERT INTO HotelRoom VALUES (38645, 706, 220.00, 3, 'city', true);
+INSERT INTO HotelRoom VALUES (47392, 706, 150.25, 5, 'sea', false);
+INSERT INTO HotelRoom VALUES (58467, 706, 290.50, 6, 'mountain', true);
+
+INSERT INTO HotelRoom VALUES (15387, 791, 190.50, 3, 'sea', true);
+INSERT INTO HotelRoom VALUES (26189, 791, 95.50, 2, 'city', false);
+INSERT INTO HotelRoom VALUES (37845, 791, 230.00, 4, 'mountain', true);
+INSERT INTO HotelRoom VALUES (57247, 791, 270.50, 6, 'sea', true);
+INSERT INTO HotelRoom VALUES (64235, 791, 140.25, 3, 'mountain', false);
+INSERT INTO HotelRoom VALUES (78324, 791, 320.00, 5, 'city', true);
+
+INSERT INTO HotelRoom VALUES (15298, 777, 175.50, 2, 'sea', true);
+INSERT INTO HotelRoom VALUES (26589, 777, 100.50, 4, 'mountain', false);
+INSERT INTO HotelRoom VALUES (37846, 777, 220.00, 3, 'city', true);
+INSERT INTO HotelRoom VALUES (46792, 777, 145.75, 5, 'sea', false);
+INSERT INTO HotelRoom VALUES (57634, 777, 290.50, 6, 'mountain', true);
+
+INSERT INTO HotelRoom VALUES (14723, 711, 130.50, 3, 'sea', true);
+INSERT INTO HotelRoom VALUES (25486, 711, 85.99, 2, 'city', false);
+INSERT INTO HotelRoom VALUES (37945, 711, 200.00, 4, 'mountain', true);
+INSERT INTO HotelRoom VALUES (46821, 711, 115.75, 1, 'city', false);
+INSERT INTO HotelRoom VALUES (57964, 711, 270.50, 6, 'sea', true);
+
+INSERT INTO HotelRoom VALUES (15327, 174, 150.50, 3, 'sea', true);
+INSERT INTO HotelRoom VALUES (26298, 174, 90.99, 2, 'city', false);
+INSERT INTO HotelRoom VALUES (37742, 174, 220.00, 4, 'mountain', true);
+INSERT INTO HotelRoom VALUES (46385, 174, 120.75, 1, 'city', false);
+INSERT INTO HotelRoom VALUES (57965, 174, 250.50, 6, 'sea', true);
+
+INSERT INTO HotelRoom VALUES (14923, 118, 140.50, 2, 'sea', true);
+INSERT INTO HotelRoom VALUES (26287, 118, 80.99, 4, 'mountain', false);
+INSERT INTO HotelRoom VALUES (37754, 118, 200.00, 3, 'city', true);
+INSERT INTO HotelRoom VALUES (46912, 118, 130.75, 5, 'sea', false);
+INSERT INTO HotelRoom VALUES (58346, 118, 270.50, 6, 'mountain', true);
+
+INSERT INTO HotelRoom VALUES (15648, 126, 180.50, 3, 'sea', true);
+INSERT INTO HotelRoom VALUES (26982, 126, 85.99, 2, 'city', false);
+INSERT INTO HotelRoom VALUES (37843, 126, 210.00, 4, 'mountain', true);
+INSERT INTO HotelRoom VALUES (46391, 126, 140.75, 1, 'city', false);
+INSERT INTO HotelRoom VALUES (57746, 126, 290.50, 6, 'sea', true);
+INSERT INTO HotelRoom VALUES (64326, 126, 150.25, 3, 'mountain', false);
+INSERT INTO HotelRoom VALUES (78534, 126, 330.00, 5, 'city', true);
+
+INSERT INTO HotelRoom VALUES (14782, 157, 130.50, 3, 'sea', true);
+INSERT INTO HotelRoom VALUES (25864, 157, 85.99, 2, 'city', false);
+INSERT INTO HotelRoom VALUES (37546, 157, 200.00, 4, 'mountain', true);
+INSERT INTO HotelRoom VALUES (46312, 157, 115.75, 1, 'city', false);
+INSERT INTO HotelRoom VALUES (57296, 157, 270.50, 6, 'sea', true);
+INSERT INTO HotelRoom VALUES (68754, 157, 140.25, 3, 'mountain', false);
+
+INSERT INTO HotelRoom VALUES (14293, 195, 120.50, 2, 'sea', true);
+INSERT INTO HotelRoom VALUES (25986, 195, 85.99, 4, 'mountain', false);
+INSERT INTO HotelRoom VALUES (38744, 195, 220.00, 3, 'city', true);
+INSERT INTO HotelRoom VALUES (47912, 195, 150.75, 5, 'sea', false);
+INSERT INTO HotelRoom VALUES (58134, 195, 290.50, 6, 'mountain', true);
+
+INSERT INTO HotelRoom VALUES (14482, 136, 130.50, 3, 'sea', true);
+INSERT INTO HotelRoom VALUES (25264, 136, 85.99, 2, 'city', false);
+INSERT INTO HotelRoom VALUES (37936, 136, 200.00, 4, 'mountain', true);
+INSERT INTO HotelRoom VALUES (46582, 136, 115.75, 1, 'city', false);
+INSERT INTO HotelRoom VALUES (57894, 136, 270.50, 6, 'sea', true);
+
+INSERT INTO HotelRoom VALUES (14258, 181, 170.50, 3, 'sea', true);
+INSERT INTO HotelRoom VALUES (26783, 181, 95.99, 2, 'city', false);
+INSERT INTO HotelRoom VALUES (37254, 181, 210.00, 4, 'mountain', true);
+INSERT INTO HotelRoom VALUES (46132, 181, 135.75, 1, 'city', false);
+INSERT INTO HotelRoom VALUES (57642, 181, 290.50, 6, 'sea', true);
+INSERT INTO HotelRoom VALUES (68821, 181, 150.25, 3, 'mountain', false);
+INSERT INTO HotelRoom VALUES (79954, 181, 320.00, 5, 'city', true);
+
+INSERT INTO HotelRoom VALUES (14462, 165, 120.50, 2, 'sea', true);
+INSERT INTO HotelRoom VALUES (25987, 165, 85.99, 4, 'mountain', false);
+INSERT INTO HotelRoom VALUES (38454, 165, 220.00, 3, 'city', true);
+INSERT INTO HotelRoom VALUES (47812, 165, 150.75, 5, 'sea', false);
+INSERT INTO HotelRoom VALUES (58124, 165, 270.50, 6, 'mountain', true);
+
+INSERT INTO HotelRoom VALUES (14392, 196, 130.50, 3, 'sea', true);
+INSERT INTO HotelRoom VALUES (25964, 196, 85.99, 2, 'city', false);
+INSERT INTO HotelRoom VALUES (37744, 196, 200.00, 4, 'mountain', true);
+INSERT INTO HotelRoom VALUES (46812, 196, 115.75, 1, 'city', false);
+INSERT INTO HotelRoom VALUES (57636, 196, 270.50, 6, 'sea', true);
+
 -- Customers 
 INSERT INTO customer VALUES (929002842, 'Justin Wang', '75 Tambrook Blvd', '2023-03-15');
-INSERT INTO customer VALUES (123456789, 'Tomer Szulsztien', '210 Waterhouse Drive', '2023-03-15');
+INSERT INTO customer VALUES (123456789, 'Tomer Szulsztein', '210 Waterhouse Drive', '2023-03-15');
 
 -- Employees
 INSERT INTO employee VALUES (987654321, 'Tomer Justin', '800 King Edward Ave', 911, false);
@@ -359,6 +476,10 @@ INSERT INTO chainphonenumbers (chainphonenumberid, hotelid, chainphonenumber)
 VALUES (102, 5432, '514-555-1234');
 INSERT INTO chainphonenumbers (chainphonenumberid, hotelid, chainphonenumber)
 VALUES (103, 7431, '604-555-1234');
+INSERT INTO chainphonenumbers (chainphonenumberid, hotelid, chainphonenumber)
+VALUES (104, 9845, '213-123-5544');
+INSERT INTO chainphonenumbers (chainphonenumberid, hotelid, chainphonenumber)
+VALUES (105, 5498, '647-532-9986');
 
 --chain email
 -- Marriott
@@ -421,6 +542,30 @@ VALUES (111, 211, 'vancouver@airbnb.com'),
        (117, 291, 'winnipeg@airbnb.com'),
        (118, 224, 'saskatoon@airbnb.com'),
        (119, 241, 'nanaimo@airbnb.com');
+       
+-- Tomer's Lodges
+INSERT INTO branchemails (branchemailid, branchid, branchemailaddress)
+VALUES (1111, 714, 'virginia@tomerlodges.com'),
+       (1112, 732, 'losangeles1@tomerlodges.com'),
+       (1113, 792, 'losangeles2@tomerlodges.com'),
+       (1114, 708, 'chicago@tomerlodges.com'),
+       (1115, 719, 'detroit@tomerlodges.com'),
+       (1116, 706, 'newyork@tomerlodges.com'),
+       (1117, 791, 'tampabay@tomerlodges.com'),
+       (1118, 777, 'seattle@tomerlodges.com'),
+       (1119, 711, 'portland@tomerlodges.com');
+       
+-- Wang Resorts
+INSERT INTO branchemails (branchemailid, branchid, branchemailaddress)
+VALUES (11111, 174, 'toronto@wangresorts.com'),
+       (11112, 118, 'losangeles@wangresorts.com'),
+       (11113, 126, 'vancouver@wangresorts.com'),
+       (11114, 157, 'toronto@wangresorts.com'),
+       (11115, 195, 'calgary1@wangresorts.com'),
+       (11116, 136, 'newyork@wangresorts.com'),
+       (11117, 181, 'calgary2@wangresorts.com'),
+       (11118, 165, 'detroit@wangresorts.com'),
+       (11119, 196, 'tampabay@wangresorts.com');
 
 --branch phonenumbers
 --Marriott Branches:
@@ -457,6 +602,29 @@ VALUES (20, 211, '604-555-1234'),
 (27, 224, '306-555-5678'),
 (28, 241, '250-555-5678');
 
+--Tomer Lodges Branches:
+INSERT INTO branchphonenumbers (branchphonenumberid,branchid, branchphonenumber)
+VALUES (31, 714, '757-500-1800'),
+       (32, 732, '213-500-1800'),
+       (33, 792, '323-500-1800'),
+       (34, 708, '773-500-1800'),
+       (35, 719, '313-500-1800'),
+       (36, 706, '212-500-1800'),
+       (37, 791, '813-500-1800'),
+       (38, 777, '206-500-1800'),
+       (39, 711, '971-500-1800');
+       
+-- Wang Resorts Branches:
+INSERT INTO branchphonenumbers (branchphonenumberid,branchid, branchphonenumber)
+VALUES (41, 174, '416-111-4653'),
+       (42, 118, '213-111-4653'),
+       (43, 126, '604-111-4653'),
+       (44, 157, '647-111-4653'),
+       (45, 195, '403-111-4653'),
+       (46, 136, '646-111-4653'),
+       (47, 181, '403-222-4653'),
+       (48, 165, '313-111-4653'),
+       (49, 196, '813-111-4653');
 
 --amentities
 INSERT INTO amentities VALUES (123456, 12345, 'TV, fridge');
@@ -474,8 +642,8 @@ VALUES
     (678901, 11995, 'fridge'),
     (789012, 11975, 'TV, air condition'),
     (890123, 11545, 'TV, fridge');
-INSERT INTO amentities VALUES (123456, 13456, 'TV, air condition');
-INSERT INTO amentities VALUES (234567, 13456, 'fridge');
+INSERT INTO amentities VALUES (123457, 13456, 'TV, air condition');
+INSERT INTO amentities VALUES (234568, 13456, 'fridge');
 INSERT INTO amentities VALUES (345673, 13557, 'TV');
 INSERT INTO amentities VALUES (416789, 13127, 'air condition, fridge');
 INSERT INTO amentities VALUES (561890, 13436, 'TV');
@@ -526,14 +694,14 @@ INSERT INTO amentities VALUES (273044, 23068, 'TV, fridge');
 INSERT INTO amentities VALUES (891361, 23061, 'TV');
 INSERT INTO amentities VALUES (473928, 23454, 'TV');
 INSERT INTO amentities VALUES (483820, 23564, 'fridge');
-INSERT INTO amentities VALUES (491270, 23666, 'air condition', 'TV');
-INSERT INTO amentities VALUES (487202, 23113, 'fridge', 'air condition');
+INSERT INTO amentities VALUES (491270, 23666, 'air condition, TV');
+INSERT INTO amentities VALUES (487202, 23113, 'fridge, air condition');
 INSERT INTO amentities VALUES (478301, 23348, 'air condition');
 INSERT INTO amentities VALUES (123344, 24454, 'TV, air condition');
 INSERT INTO amentities VALUES (234545, 24564, 'TV, air condition');
 INSERT INTO amentities VALUES (345672, 24666, 'fridge');
 INSERT INTO amentities VALUES (456703, 24113, 'TV, fridge');
-INSERT INTO amentities VALUES (567890, 24348, 'TV');
+INSERT INTO amentities VALUES (567891, 24348, 'TV');
 INSERT INTO amentities VALUES (334556, 25454, 'TV, air condition');
 INSERT INTO amentities VALUES (234356, 25164, 'fridge');
 INSERT INTO amentities VALUES (345670, 25657, 'TV');
@@ -543,7 +711,7 @@ INSERT INTO amentities VALUES (234523, 26414, 'TV, fridge');
 INSERT INTO amentities VALUES (345679, 26394, 'air condition');
 INSERT INTO amentities VALUES (456701, 26007, 'TV, fridge, air condition');
 INSERT INTO amentities VALUES (567190, 26343, 'TV');
-INSERT INTO amentities VALUES (678901, 26782, 'fridge');
+INSERT INTO amentities VALUES (678902, 26782, 'fridge');
 INSERT INTO amentities VALUES (986541, 27414, 'TV, air condition');
 INSERT INTO amentities VALUES (128765, 27394, 'fridge');
 INSERT INTO amentities VALUES (786354, 27007, 'air condition, fridge');
@@ -593,12 +761,12 @@ INSERT INTO amentities VALUES (333333, 37059, 'TV, fridge');
 INSERT INTO amentities VALUES (444444, 37045, 'air condition');
 INSERT INTO amentities VALUES (555555, 37000, 'TV');
 INSERT INTO amentities VALUES (231457, 38452, 'TV, fridge');
-INSERT INTO amentities VALUES (987654, 38770, 'air condition');
+INSERT INTO amentities VALUES (987655, 38770, 'air condition');
 INSERT INTO amentities VALUES (940456, 38649, 'TV, air condition, fridge');
 INSERT INTO amentities VALUES (493940, 38235, 'air condition, fridge');
 INSERT INTO amentities VALUES (893498, 38043, 'TV, fridge');
 
--- Trigger
+-- Trigger 1
 CREATE OR REPLACE FUNCTION changeNameOfBooking()
 RETURNS TRIGGER AS $$
 BEGIN
@@ -611,6 +779,22 @@ CREATE TRIGGER changeNameOfBooking
 AFTER UPDATE ON customer
 FOR EACH ROW
 EXECUTE FUNCTION changeNameOfBooking();
+
+-- Trigger 2
+CREATE OR REPLACE FUNCTION changeRoomsOfBranch()
+RETURNS TRIGGER AS $$
+BEGIN
+	UPDATE hotelbranch
+  	SET numberofrooms = (SELECT COUNT(*) FROM HotelRoom WHERE branchID = NEW.branchID)
+  	WHERE branchID = NEW.branchID;
+  RETURN NEW;
+END;
+$$ LANGUAGE plpgsql;
+
+CREATE TRIGGER changeRoomsOfBranch
+AFTER INSERT ON hotelroom
+FOR EACH ROW
+EXECUTE FUNCTION changeRoomsOfBranch();
 
 -- Views
 CREATE VIEW RoomsPerArea AS
