@@ -78,6 +78,21 @@ public class MyServlet extends HttpServlet{
 
 			
 		//booking
+		}else if ("Create Rental".equals(button)) {
+			String customerSIN = request.getParameter("sinNumber");
+			String roomID = request.getParameter("roomID");
+			String endDate = request.getParameter("endDate");
+			String employeeSIN = request.getParameter("employeeSIN");
+
+			try {
+				ContactProgram.createRental(Integer.parseInt(customerSIN), Integer.parseInt(roomID), endDate, Integer.parseInt(employeeSIN));
+			} catch (SQLException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+			request.setAttribute("employeeSin", employeeSIN);
+			request.getRequestDispatcher("/employeeintro.jsp").forward(request, response);
+			
 		}else if ("Book Now!".equals(button)) {
 			String chosenRoomID = request.getParameter("roomData");
 			String chosenSIN = request.getParameter("userSinFinal");
@@ -101,6 +116,36 @@ public class MyServlet extends HttpServlet{
 			request.getRequestDispatcher("/customerintro.jsp").forward(request, response);
 		
 			//cancel booking on employee side
+		}else if ("Begin Rental".equals(button)) {
+			String bookingID = request.getParameter("bookingID");
+			String employeeSIN = request.getParameter("employeeSIN");
+			
+			try {
+				ContactProgram.startRental(Integer.parseInt(bookingID), Integer.parseInt(employeeSIN));
+			} catch (SQLException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+			
+			request.setAttribute("employeeSin", employeeSIN);
+			request.getRequestDispatcher("/employeeintro.jsp").forward(request, response);
+		
+			//cancel booking on employee side
+		}else if ("Fire Employee".equals(button)) {
+			String firedEmployeeSIN = request.getParameter("firedEmployeeSIN");
+			String employeeSIN = request.getParameter("employeeSIN");
+			
+			try {
+				ContactProgram.removeEmployee(Integer.parseInt(firedEmployeeSIN));
+			} catch (SQLException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+			
+			request.setAttribute("employeeSin", employeeSIN);
+			request.getRequestDispatcher("/employeeintro.jsp").forward(request, response);
+		
+			//cancel booking on employee side
 		}else if ("Cancel Booking".equals(button)) {
 			String bookingID = request.getParameter("bookingID");
 			String employeeSIN = request.getParameter("employeeSIN");
@@ -112,7 +157,22 @@ public class MyServlet extends HttpServlet{
 				e.printStackTrace();
 			}
 			
-			request.setAttribute("employeeSIN", employeeSIN);
+			request.setAttribute("employeeSin", employeeSIN);
+			request.getRequestDispatcher("/employeeintro.jsp").forward(request, response);
+			
+			
+		}else if ("Confirm Payment".equals(button)) {
+			String rentalID = request.getParameter("rentalID");
+			String employeeSIN = request.getParameter("employeeSIN");
+			
+			try {
+				ContactProgram.confirmPayment(Integer.parseInt(rentalID));
+			} catch (SQLException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+			
+			request.setAttribute("employeeSin", employeeSIN);
 			request.getRequestDispatcher("/employeeintro.jsp").forward(request, response);
 			
 			

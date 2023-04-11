@@ -140,6 +140,30 @@ public class ContactProgram {
         return result;
     }
     
+    public static ResultSet getEmployees(Object branchID) throws SQLException {
+    	Connection connection = DriverManager.getConnection(jdbcURL, username, password);
+    	String sql = "SELECT * FROM employee WHERE isManager = false AND branchID=" + branchID;
+    	
+    	Statement statement = connection.createStatement();
+        
+        ResultSet result = statement.executeQuery(sql);
+        
+        connection.close();
+        
+        return result;
+    }
+    
+    public static void removeEmployee(Object sin) throws SQLException {
+    	Connection connection = DriverManager.getConnection(jdbcURL, username, password);
+    	String sql = "DELETE FROM employee WHERE employeeSIN = "+sin;
+    	
+    	Statement statement = connection.createStatement();
+        
+        statement.execute(sql);
+        
+        connection.close();
+    }
+    
     public static ResultSet showEmployeeProfile(Object sin) throws SQLException {
     	Connection connection = DriverManager.getConnection(jdbcURL, username, password);
     	String sql = "SELECT * FROM employee WHERE employeesin=" + sin.toString();
@@ -247,6 +271,82 @@ public class ContactProgram {
         connection.close();
     }
     
+  //booking -> rental
+    public static void startRental(int bookingID, int employeeSIN) throws SQLException{
+    	Connection connection = DriverManager.getConnection(jdbcURL, username, password);
+    	Random rand = new Random();
+    	int randomRentalID = rand.nextInt(89999) + 10000;
+    	
+    	int sin = 0;
+    	int roomID = 0;
+    	String nameOfResident = null;
+    	String start = null;
+    	String end = null;
+    	
+    	String getBooking = "SELECT * FROM booking WHERE bookingID=" + bookingID;
+    	Statement statement = connection.createStatement();
+        ResultSet result = statement.executeQuery(getBooking);
+        while(result.next()) {
+        	sin = result.getInt(2);
+        	roomID = result.getInt(3);
+        	nameOfResident = result.getString(4);
+        	start = result.getString(5);
+        	end = result.getString(6);
+        }
+
+    	
+    	String sql = "INSERT INTO rental VALUES (?, ?, ?, ?, ?, ?, ?, ?, true, false )";
+    	PreparedStatement insert = connection.prepareStatement(sql);
+    	
+    	insert.setInt(1, randomRentalID);
+    	insert.setInt(2, bookingID);
+    	insert.setInt(3, sin);
+    	insert.setInt(4, employeeSIN);
+    	insert.setInt(5, roomID);
+    	insert.setString(6, nameOfResident);
+    	insert.setDate(7, java.sql.Date.valueOf(start));
+    	insert.setDate(8, java.sql.Date.valueOf(end));
+    	
+    	insert.executeUpdate();
+    	
+    	sql = "UPDATE Booking SET checkIn = true WHERE BookingID="+bookingID;
+    	PreparedStatement bookingUpdate = connection.prepareStatement(sql);
+    	
+    	bookingUpdate.executeUpdate();
+        connection.close();
+    }
+    
+    //create rental
+    public static void createRental(int sin, int roomID, String end, int employeeSIN) throws SQLException{
+    	Connection connection = DriverManager.getConnection(jdbcURL, username, password);
+    	Random rand = new Random();
+    	int randomRentalID = rand.nextInt(89999) + 10000;
+    	
+    	String start = java.time.LocalDate.now().toString();
+    	
+    	String name="";
+    	String getName = "SELECT * FROM customer WHERE sin=" + sin;
+    	Statement statement = connection.createStatement();
+        ResultSet result = statement.executeQuery(getName);
+        while(result.next()) {
+        	name = result.getString(2);
+        }
+    	
+    	String sql = "INSERT INTO rental VALUES (?, null, ?, ?, ?, ?, ?, ?, true, false )";
+    	PreparedStatement insert = connection.prepareStatement(sql);
+    	
+    	insert.setInt(1, randomRentalID);
+    	insert.setInt(2, sin);
+    	insert.setInt(3, employeeSIN);
+    	insert.setInt(4, roomID);
+    	insert.setString(5, name);
+    	insert.setDate(6, java.sql.Date.valueOf(start));
+    	insert.setDate(7, java.sql.Date.valueOf(end));
+    	
+    	insert.executeUpdate();
+        connection.close();
+    }
+    
     //delete booking
     public static void deleteBooking(int bookingID) throws SQLException{
     	Connection connection = DriverManager.getConnection(jdbcURL, username, password);
@@ -255,6 +355,17 @@ public class ContactProgram {
     	PreparedStatement delete = connection.prepareStatement(sql);
     	
     	delete.executeUpdate();
+        connection.close();
+    }
+    
+    //confirm payment on rental
+    public static void confirmPayment(int rentalID) throws SQLException{
+    	Connection connection = DriverManager.getConnection(jdbcURL, username, password);
+    	
+    	String sql = "UPDATE rental SET paymentStatus=true WHERE rentalID="+rentalID;
+    	PreparedStatement update = connection.prepareStatement(sql);
+    	
+    	update.executeUpdate();
         connection.close();
     }
     
@@ -277,6 +388,20 @@ public class ContactProgram {
     public static ResultSet getBranchBookings(Object BranchID) throws SQLException {
     	Connection connection = DriverManager.getConnection(jdbcURL, username, password);
     	String sql = "SELECT booking.bookingid, booking.sin, booking.roomid, booking.nameofresident, booking.startdate, booking.enddate, booking.checkin FROM booking INNER JOIN hotelroom ON booking.roomID = hotelroom.roomID WHERE hotelroom.branchID=" + BranchID;
+
+        Statement statement = connection.createStatement();
+        
+        ResultSet result = statement.executeQuery(sql);
+        
+        connection.close();
+        
+        return result;
+
+    }
+    
+    public static ResultSet getBranchRentals(Object BranchID) throws SQLException {
+    	Connection connection = DriverManager.getConnection(jdbcURL, username, password);
+    	String sql = "SELECT * FROM rental INNER JOIN hotelroom ON rental.roomID = hotelroom.roomID WHERE hotelroom.branchID=" + BranchID;
 
         Statement statement = connection.createStatement();
         

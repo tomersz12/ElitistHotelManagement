@@ -20,7 +20,7 @@ CREATE TABLE HotelRoom(
     roomID INTEGER NOT NULL,
     branchID INTEGER NOT NULL,
     price FLOAT NOT NULL,
-    roomCapacity INTEGER NOT NULL CHECK (roomCapacity <= 4),
+    roomCapacity INTEGER NOT NULL,
     typeOfView VARCHAR(255) NOT NULL,
     extendability BOOLEAN NOT NULL,
     PRIMARY KEY (roomID),
@@ -32,6 +32,7 @@ CREATE TABLE Employee(
     fullName VARCHAR(255) NOT NULL,
     employeeAddress VARCHAR(40) NOT NULL,
     branchID INTEGER NOT NULL,
+    isManager BOOLEAN NOT NULL DEFAULT false,
     PRIMARY KEY (employeeSIN),
     FOREIGN KEY (branchID) REFERENCES HotelBranch (branchID)
 );
@@ -105,14 +106,6 @@ CREATE TABLE BranchPhoneNumbers(
     branchPhoneNumber VARCHAR(255) NOT NULL,
     PRIMARY KEY (branchPhoneNumberID),
     FOREIGN KEY (branchID) REFERENCES HotelBranch (branchID)
-);
-
-CREATE TABLE Roles(
-    roleID INTEGER NOT NULL,
-    employeeSIN INTEGER NOT NULL,
-    employeeRole VARCHAR(255) NOT NULL,
-    PRIMARY KEY (roleID),
-    FOREIGN KEY (employeeSIN) REFERENCES Employee (employeeSIN)
 );
 
 CREATE TABLE Amentities(
@@ -205,7 +198,8 @@ INSERT INTO customer VALUES (929002842, 'Justin Wang', '75 Tambrook Blvd', '2023
 INSERT INTO customer VALUES (123456789, 'Tomer Szulsztien', '210 Waterhouse Drive', '2023-03-15');
 
 -- Employees
-INSERT INTO employee VALUES (987654321, 'Tomer Justin', '800 King Edward Ave', 911);
+INSERT INTO employee VALUES (987654321, 'Tomer Justin', '800 King Edward Ave', 911, false);
+INSERT INTO employee VALUES (123123123, 'Manager Man', '12 Manager Road', 911, true);
 
 -- Trigger
 CREATE OR REPLACE FUNCTION changeNameOfBooking()
