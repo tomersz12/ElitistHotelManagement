@@ -57,8 +57,8 @@ public class ContactProgram {
     //show all the hotels that satisfy filters
     public static ResultSet showFiltered(Object city, Object startDate, Object endDate, Object guestAmount, Object hotel, Object rating, Object numberOfRooms, Object price) throws SQLException{
     	Connection connection = DriverManager.getConnection(jdbcURL, username, password);
-    	String finalSql = "SELECT hotelchain.hotelname, hotelbranch.starrating, hotelbranch.numberofrooms, hotelbranch.branchaddress, hotelroom.roomid, hotelroom.price, hotelroom.roomcapacity, hotelroom.typeofview, hotelroom.extendability, amentities.amentities"
-    			+ " FROM hotelchain INNER JOIN hotelbranch ON hotelchain.hotelid = hotelbranch.hotelid INNER JOIN hotelroom ON hotelroom.branchid = hotelbranch.branchid INNER JOIN amentities ON amentities.roomid = hotelroom.roomid WHERE ";
+    	String finalSql = "SELECT hotelchain.hotelname, hotelbranch.starrating, hotelbranch.numberofrooms, hotelbranch.branchaddress, hotelroom.roomid, hotelroom.price, hotelroom.roomcapacity, hotelroom.typeofview, hotelroom.extendability, amentities.amentities, branchemails.branchemailaddress, branchphonenumbers.branchphonenumber"
+    			+ " FROM hotelchain FULL JOIN hotelbranch ON hotelchain.hotelid = hotelbranch.hotelid FULL JOIN hotelroom ON hotelroom.branchid = hotelbranch.branchid FULL JOIN amentities ON amentities.roomid = hotelroom.roomid FULL JOIN branchphonenumbers ON branchphonenumbers.branchid = hotelbranch.branchid FULL JOIN branchemails ON branchemails.branchid = hotelbranch.branchid WHERE ";
     	
     	String cityPortion;
     	String guestAmountPortion;
@@ -70,9 +70,9 @@ public class ContactProgram {
     	if (city.equals("")) {
     		cityPortion = "";
     	}else {
-    		cityPortion = "hotelbranch.branchaddress = " + "\'" + city + "\'";
+    		cityPortion = "hotelbranch.branchaddress = " + "\'" + city.toString() + "\'";
     	}
-    	   	
+    	
     	if (guestAmount.equals("")) {
     		guestAmountPortion = "";
     	}else {
@@ -100,7 +100,7 @@ public class ContactProgram {
     	if (price.equals("")) {
     		pricePortion = "";
     	}else {
-    		pricePortion = " AND hotelroom.price >= " + "\'" + price + "\'";
+    		pricePortion = " AND hotelroom.price <= " + "\'" + price + "\'";
     	}
     	
     	finalSql = finalSql + cityPortion + guestAmountPortion + hotelNamePortion + ratingPortion + numberOfRoomsPortion + pricePortion;
@@ -377,8 +377,11 @@ public class ContactProgram {
         connection.close();
     }
     
-    public static void createRoom(int roomID, int branchID, String price, int capacity, String view, boolean extendable) throws SQLException{
+    public static void createRoom(int roomID, int branchID, String price, int capacity, String view, boolean extendable, String amentities) throws SQLException{
     	Connection connection = DriverManager.getConnection(jdbcURL, username, password);
+    	
+    	Random rand = new Random();
+    	int amentitiesID = rand.nextInt(899999) + 100000;
     	
     	String sql = "INSERT INTO hotelroom VALUES (?, ?, ?, ?, ?, ?)";
     	PreparedStatement insert = connection.prepareStatement(sql);
@@ -392,7 +395,15 @@ public class ContactProgram {
     	
     	System.out.println("Creating Room");
     	
+    	String addAmentities = "INSERT INTO amentities VALUES (?, ?, ?)";
+    	PreparedStatement insertAmentities = connection.prepareStatement(addAmentities);
+    	
+    	insertAmentities.setInt(1, amentitiesID);
+    	insertAmentities.setInt(2, roomID);
+    	insertAmentities.setString(3, amentities);
+    	
     	insert.executeUpdate();
+    	insertAmentities.executeUpdate();
         connection.close();
     }
     

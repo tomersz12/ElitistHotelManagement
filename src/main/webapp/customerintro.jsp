@@ -41,12 +41,11 @@
 	<div class="stockImage">
 		<img src="images/vacation.jpeg" alt="Vacation!" class="vacation">
 		<div class="description">
-			<h3>The Industrial Revolution shifted from an agrarian economy
-				to a manufacturing economy where products were no longer made solely
-				by hand but by machines. This led to increased production and
-				efficiency, lower prices, more goods, improved wages, and migration
-				from rural areas to urban areas.</h3>
-			<h3><%=ContactProgram.add()%></h3>
+			<h3>Here at Elitist Hotel Management, we believe you can
+			find your next vacation right here! Explore one of our 5 WONDERFUL
+			partner hotel chains and be amazed at all there offerings. I'm
+			sure all the choices will be simply overwhelming, and will excite
+			you into picking the right place for your next getaway!</h3>
 		</div>
 	</div>
 	

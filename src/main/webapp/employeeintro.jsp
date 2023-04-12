@@ -174,6 +174,8 @@
 				<input type="checkbox" name="extendability">
 				<label for="extendability"> Extendable? </label>
 				<br></br>
+				<input type = "text" name="amentities" placeholder="Any Amentities?">
+				<br></br>
 				<input type="submit" name="Button" class="createRoomButton" value="Create Room">
 				<input type="hidden" name="employeeSIN" value=<%=employeeset.getString(1)%>> 
 				<input type="hidden" name="branchID" value=<%=employeeset.getString(4)%>> 

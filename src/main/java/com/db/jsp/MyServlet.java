@@ -114,6 +114,7 @@ public class MyServlet extends HttpServlet{
 			String price = request.getParameter("price");
 			String roomCapacity = request.getParameter("roomCapacity");
 			String typeOfView = request.getParameter("typeOfView");
+			String amentities = request.getParameter("amentities");
 			
 			boolean extendability = false;
 			if (request.getParameter("extendability") != null) {
@@ -123,7 +124,7 @@ public class MyServlet extends HttpServlet{
 			String employeeSIN = request.getParameter("employeeSIN");
 
 			try {
-				ContactProgram.createRoom(Integer.parseInt(roomID), Integer.parseInt(branchID), price, Integer.parseInt(roomCapacity), typeOfView, extendability);
+				ContactProgram.createRoom(Integer.parseInt(roomID), Integer.parseInt(branchID), price, Integer.parseInt(roomCapacity), typeOfView, extendability, amentities);
 			} catch (SQLException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
