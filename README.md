@@ -1,5 +1,3 @@
-Elitist Hotel Management System
+Elitist Hotel Management System for CSI2132
 
-Database: MySQL
-Server-Side: Java
-Front-End: HTML, CSS, JavaScript, React
+Made with PostgreSQL and Java/JSP
