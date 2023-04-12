@@ -60,7 +60,7 @@ CREATE TABLE Booking(
 
 CREATE TABLE Rental(
     rentalID INTEGER NOT NULL,
-    bookingID INTEGER NOT NULL,
+    bookingID INTEGER,
     SIN INTEGER NOT NULL,
     employeeSIN INTEGER NOT NULL,
     roomID INTEGER NOT NULL,

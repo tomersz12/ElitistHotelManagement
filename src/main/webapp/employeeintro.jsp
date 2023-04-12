@@ -145,7 +145,6 @@
 			<% } %>
 		</TABLE>
 	</div>
-	<% } %>
 	
 	<h3>Create Employee Account</h3>
 	<div class = "form">
@@ -181,6 +180,10 @@
 				<input type="hidden" name="branchID" value=<%=employeeset.getString(4)%>> 
 			</form>
 	</div>
+	
+	<% } %>
+	
+	
 	
 	</div>
 	
