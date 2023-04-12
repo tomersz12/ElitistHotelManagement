@@ -766,6 +766,109 @@ INSERT INTO amentities VALUES (940456, 38649, 'TV, air condition, fridge');
 INSERT INTO amentities VALUES (493940, 38235, 'air condition, fridge');
 INSERT INTO amentities VALUES (893498, 38043, 'TV, fridge');
 
+INSERT INTO Amentities (amentitieID, roomID, amentities)
+VALUES 
+  (215216, 24569, 'TV, air condition, fridge'),
+  (219212, 39015, 'TV'),
+  (297422, 57693, 'air condition, fridge'),
+  (213258, 81325, 'TV, fridge'),
+  (221255, 92475, 'TV, air condition, fridge'),
+  (235642, 12846, 'TV, air condition'),
+  (212735, 23541, 'fridge'),
+  (256982, 35269, 'TV, air condition'),
+  (275283, 45783, 'air condition'),
+  (246192, 56492, 'TV, fridge'),
+  (265231, 14832, 'TV, air condition, fridge'),
+  (256562, 25691, 'TV'),
+  (212253, 37564, 'fridge'),
+  (278742, 45784, 'TV, air condition'),
+  (284692, 56493, 'air condition, fridge'),
+  (262375, 64325, 'TV'),
+  (213725, 78543, 'TV, air condition'),
+  (212973, 15297, 'fridge'),
+  (275983, 26853, 'air condition'),
+  (296592, 37954, 'TV, fridge'),
+  (213796, 46975, 'TV, air condition'),
+  (293962, 57246, 'fridge'),
+  (213845, 64125, 'air condition'),
+  (237162, 13487, 'TV, air condition'),
+  (219286, 24689, 'TV'),
+  (274357, 36547, 'fridge'),
+  (211753, 47825, 'TV, air condition, fridge'),
+  (261492, 58964, 'TV, fridge'),
+  (278234, 14275, 'air condition'),
+  (219276, 25763, 'TV, air condition'),
+  (296845, 38645, 'fridge'),
+  (278493, 47392, 'TV'),
+  (277647, 58467, 'air condition, fridge'),
+  (254973, 15387, 'TV, air condition'),
+  (216289, 26189, 'TV, fridge'),
+  (213892, 37845, 'fridge'),
+  (293741, 57247, 'TV, air condition'),
+  (215238, 64235, 'air condition, fridge'),
+  (219743, 78324, 'TV'),
+  (272698, 15298, 'TV, fridge'),
+  (216597, 26589, 'TV, air condition'),
+  (213863, 37846, 'fridge'),
+  (297291, 46792, 'air condition'),
+  (219576, 57634, 'TV, air condition'),
+  (257263, 14723, 'TV, fridge'),
+  (215264, 25486, 'TV, air condition, fridge'),
+  (275292, 37945, 'TV, air condition'),
+  (259281, 46821, 'fridge'),
+  (276392, 57964, 'air condition');
+  
+INSERT INTO amentities VALUES (451001, 15327, 'TV, air condition, fridge');
+INSERT INTO amentities VALUES (451003, 26298, 'air condition');
+INSERT INTO amentities VALUES (451005, 37742, 'TV, fridge');
+INSERT INTO amentities VALUES (451007, 46385, 'TV, air condition');
+INSERT INTO amentities VALUES (451009, 57965, 'TV, air condition, fridge');
+INSERT INTO amentities VALUES (451011, 14923, 'fridge');
+INSERT INTO amentities VALUES (451013, 26287, 'TV, air condition, fridge');
+INSERT INTO amentities VALUES (451015, 37754, 'TV');
+INSERT INTO amentities VALUES (451017, 46912, 'air condition, fridge');
+INSERT INTO amentities VALUES (451019, 58346, 'TV, air condition');
+INSERT INTO amentities VALUES (451021, 15648, 'TV');
+INSERT INTO amentities VALUES (451023, 26982, 'air condition');
+INSERT INTO amentities VALUES (451025, 37843, 'fridge');
+INSERT INTO amentities VALUES (451027, 46391, 'TV, fridge');
+INSERT INTO amentities VALUES (451029, 57746, 'TV, air condition, fridge');
+INSERT INTO amentities VALUES (451031, 64326, 'TV, air condition');
+INSERT INTO amentities VALUES (451033, 78534, 'TV, fridge');
+INSERT INTO amentities VALUES (451035, 14782, 'air condition, fridge');
+INSERT INTO amentities VALUES (451037, 25864, 'TV');
+INSERT INTO amentities VALUES (451039, 37546, 'TV, air condition');
+INSERT INTO amentities VALUES (451041, 46312, 'fridge');
+INSERT INTO amentities VALUES (451043, 57296, 'TV, fridge');
+INSERT INTO amentities VALUES (451045, 68754, 'air condition, fridge');
+INSERT INTO amentities VALUES (451047, 14293, 'TV, air condition');
+INSERT INTO amentities VALUES (451049, 25986, 'TV, fridge');
+INSERT INTO amentities VALUES (451051, 38744, 'TV, air condition, fridge');
+INSERT INTO amentities VALUES (451053, 47912, 'air condition');
+INSERT INTO amentities VALUES (451055, 58134, 'TV, air condition, fridge');
+INSERT INTO amentities VALUES (451057, 14482, 'TV, fridge');
+INSERT INTO amentities VALUES (451059, 25264, 'TV, air condition, fridge');
+INSERT INTO amentities VALUES (451061, 37936, 'air condition');
+INSERT INTO amentities VALUES (451063, 46582, 'TV, air condition, fridge');
+INSERT INTO amentities VALUES (451065, 57894, 'TV, fridge');
+INSERT INTO amentities VALUES (451067, 14258, 'TV, air condition');
+INSERT INTO amentities VALUES (451069, 26783, 'air condition');
+INSERT INTO amentities VALUES (451071, 37254, 'fridge');
+INSERT INTO amentities VALUES (451073, 46132, 'TV, air condition, fridge');
+INSERT INTO amentities VALUES (451075, 57642, 'TV, fridge');
+INSERT INTO amentities VALUES (451077, 68821, 'TV, air condition, fridge');
+INSERT INTO amentities VALUES (451079, 79954, 'TV, fridge');
+INSERT INTO amentities VALUES (451081, 14462, 'TV, air condition, fridge');
+INSERT INTO amentities VALUES (451083, 25987, 'TV, fridge');
+INSERT INTO amentities VALUES (451085, 38454, 'air condition');
+INSERT INTO amentities VALUES (451087, 47812, 'TV, air condition, fridge');
+INSERT INTO amentities VALUES (451089, 58124, 'TV, fridge');
+INSERT INTO amentities VALUES (451091, 14392, 'TV, air condition');
+INSERT INTO amentities VALUES (451093, 25964, 'TV, air condition, fridge');
+INSERT INTO amentities VALUES (451095, 37744, 'fridge');
+INSERT INTO amentities VALUES (451097, 46812, 'TV, air condition');
+INSERT INTO amentities VALUES (451099, 57636, 'TV, fridge');
+
 -- Trigger 1
 CREATE OR REPLACE FUNCTION changeNameOfBooking()
 RETURNS TRIGGER AS $$
